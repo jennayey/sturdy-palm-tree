@@ -24,8 +24,11 @@ import MainContent from "./MainContent";
 
 
 import Home from "./GLOES/Home";
+import Enrollment from "./GLOES/Enrollment";
 import BenefitSummary from "./GLOES/BenefitSummary";
-
+import AccountProfile from "./GLOES/AccountProfile";
+import EmployeeInquiryUpload from "./GLOES/EmployeeInquiryUpload";
+import Reports from "./GLOES/Reports";
 const drawerWidth = 240;
 
 let cTheme = createTheme(customtheme);
@@ -50,6 +53,25 @@ function App(props) {
               <ListItemText primary="Home" disableTypography="true" />
             </Typography>
           </ListItemButton>
+
+          <ListItemButton onClick={()=>setCurrentScreen(<Enrollment/>)}>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Enrollment" disableTypography="true" />
+            </Typography>
+          </ListItemButton>
+
+          <ListItemButton onClick={()=>setCurrentScreen(<AccountProfile/>)} >
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Account Profile" disableTypography="true" />
+            </Typography>
+          </ListItemButton>
+
           <ListItemButton onClick={()=>setCurrentScreen(<BenefitSummary/>)}>
           <ListItemIcon>
             <InboxIcon />
@@ -58,6 +80,61 @@ function App(props) {
             <ListItemText primary="Benefit Summary" disableTypography="true" />
           </Typography>
         </ListItemButton>
+
+        <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Employee Inquiry" disableTypography="true" />
+            </Typography>
+          </ListItemButton>
+
+          <ListItemButton  onClick={()=>setCurrentScreen(<EmployeeInquiryUpload/>)}>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Employee Inquiry Upload" disableTypography="true" />
+            </Typography>
+          </ListItemButton>
+
+          <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Policy Inquiry" disableTypography="true" />
+            </Typography>
+          </ListItemButton>
+
+          <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Account Policy" disableTypography="true" />
+            </Typography>
+          </ListItemButton>
+
+          <ListItemButton onClick={()=>setCurrentScreen(<Reports/>)}>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Reports" disableTypography="true" />
+            </Typography>
+          </ListItemButton>
+
+          <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Maintenance" disableTypography="true" />
+            </Typography>
+          </ListItemButton>
+     
       </List>
 
       <Divider />

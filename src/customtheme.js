@@ -24,10 +24,12 @@
     },
     text: {
       primary: 'rgba(43,39,39,0.91)',
+      hint: 'rgba(0,0,0,0.38)'
     },
     background: {
       default: '#eff8fa',
     },
+    
   },
   typography: {
     fontFamily: ['GothamBlack', "GothamMedium", "GothamRegular",],
