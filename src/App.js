@@ -17,16 +17,22 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material/styles";
-import { createTheme } from '@mui/material/styles';
-import customtheme from "./customtheme"
-import ListItemButton from '@mui/material/ListItemButton';
+import { createTheme } from "@mui/material/styles";
+import customtheme from "./customtheme";
+import ListItemButton from "@mui/material/ListItemButton";
+import MainContent from "./MainContent";
+
+
+import Home from "./GLOES/Home";
+import BenefitSummary from "./GLOES/BenefitSummary";
 
 const drawerWidth = 240;
 
-let cTheme = createTheme(customtheme)
+let cTheme = createTheme(customtheme);
 function App(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [currentScreen, setCurrentScreen] = React.useState(<Home/>);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -36,26 +42,24 @@ function App(props) {
     <div>
       <Toolbar />
       <List sx={{ marginTop: `20px` }}>
-        {[
-          "Home",
-          "Enrollment",
-          "Account Policy",
-          "Benefit Summary",
-          "Enterprise Summary",
-          "Reports",
-          "Maintenance",
-        ].map((text, index) => (
-          <ListItemButton key={text}>
+          <ListItemButton onClick={()=>setCurrentScreen(<Home/>)} >
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <InboxIcon />
             </ListItemIcon>
-            <Typography variant="body" noWrap component="div">
-            <ListItemText primary={text} disableTypography="true" />
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary="Home" disableTypography="true" />
             </Typography>
-
           </ListItemButton>
-        ))}
+          <ListItemButton onClick={()=>setCurrentScreen(<BenefitSummary/>)}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Benefit Summary" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
       </List>
+
       <Divider />
       <List>
         {["User Profile", "Quick Guide", "Log Out"].map((text, index) => (
@@ -63,10 +67,9 @@ function App(props) {
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
-            <Typography variant="body" noWrap component="div">
-
-            <ListItemText primary={text} disableTypography="true" />
-           </Typography>
+            <Typography variant="body2" noWrap component="div">
+              <ListItemText primary={text} disableTypography="true" />
+            </Typography>
           </ListItem>
         ))}
       </List>
@@ -79,7 +82,7 @@ function App(props) {
 
   return (
     <ThemeProvider theme={cTheme}>
-      <Box sx={{ display: "flex", height:"100%", backgroundColor: "#efefef" }}>
+      <Box sx={{ display: "flex", height: "100%" }}>
         <CssBaseline />
         <AppBar
           position="fixed"
@@ -89,9 +92,10 @@ function App(props) {
             ml: { md: `${drawerWidth}px` },
             zIndex: 2000,
             backgroundColor: "white",
+            borderTop: "10px solid #005db9"
           }}
         >
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between"}}>
             <IconButton
               color="primary"
               aria-label="open drawer"
@@ -104,6 +108,7 @@ function App(props) {
             <Typography color="primary" variant="h6" noWrap component="div">
               Cocolife MyPolicy
             </Typography>
+            
             <IconButton color="primary" aria-label="profile" href="">
               <AccountCircle />
             </IconButton>
@@ -148,7 +153,7 @@ function App(props) {
           </Drawer>
         </Box>
         <Box
-          component="main"
+          component="div"
           sx={{
             height: "100%",
             flexGrow: 1,
@@ -156,10 +161,7 @@ function App(props) {
             width: { sm: `calc(100% - ${drawerWidth}px)` },
           }}
         >
-          <Toolbar />
-          <Typography variant="h5" noWrap component="div">
-            Benefit Summary{" "}
-          </Typography>
+          <MainContent screen={currentScreen} />
         </Box>
       </Box>
     </ThemeProvider>

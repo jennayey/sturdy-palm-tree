@@ -32,33 +32,44 @@
   typography: {
     fontFamily: ['GothamBlack', "GothamMedium", "GothamRegular",],
     h1: {
-      fontWeight: 600,
-      fontFamily: 'GothamRegular',
-      fontSize: '6rem',
+     fontFamily: 'GothamMedium',
     },
     h2: {
-      fontWeight: 600,
+      fontFamily: 'GothamMedium',    
     },
     h5: {
-      fontWeight: 600,
-      fontSize: '1.1rem',
-      fontFamily: 'GothamBlack',
+      fontFamily: 'GothamMedium',
     },
     h6: {
-      fontWeight: 600,
-      fontSize: '1.1rem',
-      fontFamily: 'GothamBlack',
-    },
-
-    body: {
       fontFamily: 'GothamMedium',
-      fontSize: '.9rem'
+      
     },
 
+    body1: {
+      fontFamily: 'GothamRegular',
+      fontWeight: '500',
+      fontSize: '16px'
+    },
+    body2:{
+      fontFamily: 'GothamMedium',
+    
+    },
     span: {
       fontFamily: "GothamRegular"
     },
+    overline: {
+      fontFamily: "GothamMedium",
+      fontWeight: '500',
+      fontSize: ".9em"
 
+    },
+    caption: {
+      fontFamily: "GothamMedium",
+      fontSize: ".9em"
+    },
+    subtitle1:  {
+      fontFamily: "GothamMedium",
+    },
   
     fontWeightBold: 700,
   },
