@@ -206,7 +206,7 @@ function App(props) {
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
-              display: { xs: "block", sm: "none" },
+              display: {sm: "block"},
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
                 width: drawerWidth,
