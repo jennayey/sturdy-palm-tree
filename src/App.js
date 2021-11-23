@@ -19,6 +19,7 @@ import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from '@mui/material/styles';
 import customtheme from "./customtheme"
+import ListItemButton from '@mui/material/ListItemButton';
 
 const drawerWidth = 240;
 
@@ -44,12 +45,15 @@ function App(props) {
           "Reports",
           "Maintenance",
         ].map((text, index) => (
-          <ListItem button key={text}>
+          <ListItemButton key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+            <Typography variant="body" noWrap component="div">
+            <ListItemText primary={text} disableTypography="true" />
+            </Typography>
+
+          </ListItemButton>
         ))}
       </List>
       <Divider />
@@ -59,7 +63,10 @@ function App(props) {
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <Typography variant="body" noWrap component="div">
+
+            <ListItemText primary={text} disableTypography="true" />
+           </Typography>
           </ListItem>
         ))}
       </List>
@@ -72,7 +79,7 @@ function App(props) {
 
   return (
     <ThemeProvider theme={cTheme}>
-      <Box sx={{ display: "flex", backgroundColor: "#efefef" }}>
+      <Box sx={{ display: "flex", height:"100%", backgroundColor: "#efefef" }}>
         <CssBaseline />
         <AppBar
           position="fixed"
