@@ -81,7 +81,7 @@ function App(props) {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton>
+        <ListItemButton disabled>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
@@ -99,7 +99,7 @@ function App(props) {
             </Typography>
           </ListItemButton>
 
-          <ListItemButton>
+          <ListItemButton disabled>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
@@ -108,7 +108,7 @@ function App(props) {
             </Typography>
           </ListItemButton>
 
-          <ListItemButton>
+          <ListItemButton disabled>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
@@ -126,7 +126,7 @@ function App(props) {
             </Typography>
           </ListItemButton>
 
-          <ListItemButton>
+          <ListItemButton disabled>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
@@ -140,14 +140,14 @@ function App(props) {
       <Divider />
       <List>
         {["User Profile", "Quick Guide", "Log Out"].map((text, index) => (
-          <ListItem button key={text}>
+          <ListItemButton key={text} disabled>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
             <Typography variant="body2" noWrap component="div">
               <ListItemText primary={text} disableTypography="true" />
             </Typography>
-          </ListItem>
+          </ListItemButton>
         ))}
       </List>
       <Divider />
