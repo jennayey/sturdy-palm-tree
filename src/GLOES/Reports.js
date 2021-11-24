@@ -14,13 +14,15 @@ import Button from "@mui/material/Button";
 
 import Grid from "@mui/material/Grid";
 
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DatePicker from '@mui/lab/DatePicker';
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import DatePicker from "@mui/lab/DatePicker";
+import TextField from "@mui/material/TextField";
 
 function Reports(props) {
   const [reportType, setReportType] = React.useState("");
   const [siteName, setSiteName] = React.useState("");
+  const [dateThing, setDateThing] = React.useState("");
 
   const handleReportType = (event) => {
     setReportType(event.target.value);
@@ -28,6 +30,10 @@ function Reports(props) {
 
   const handleSiteName = (event) => {
     setSiteName(event.target.value);
+  };
+
+  const handleDate = (event) => {
+    setDateThing(event.target.value);
   };
 
   return (
@@ -76,46 +82,128 @@ function Reports(props) {
             </MenuItem>
           </Select>
           <Grid container spacing={2} sx={{ mt: 1 }}>
-            <Grid item xs={12} md={12} lg={6} xl={6}>
-            <Stack>
-            <Typography variant="overline">Employee Type</Typography>
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+              <Stack>
+                <Typography variant="overline">Employee Type</Typography>
 
-<Select
-  value={reportType}
-  onChange={handleReportType}
-  displayEmpty
-  inputProps={{ "aria-label": "Without label" }}
->
-  <MenuItem value="">
-    <em>Select Employee Type</em>
-  </MenuItem>
-  <MenuItem value="Addition">
-             Rank & File
-            </MenuItem>
-</Select>
-            </Stack>
+                <Select
+                  value={reportType}
+                  onChange={handleReportType}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                >
+                  <MenuItem value="">
+                    <em>Select Employee Type</em>
+                  </MenuItem>
+                  <MenuItem value="Addition">Rank & File</MenuItem>
+                </Select>
+              </Stack>
             </Grid>
-            <Grid item xs={12} md={12} lg={6} xl={6}>
-            <Stack>
-            <Typography variant="overline">Status</Typography>
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+              <Stack>
+                <Typography variant="overline">Status</Typography>
 
-<Select
-  value={reportType}
-  onChange={handleReportType}
-  displayEmpty
-  inputProps={{ "aria-label": "Without label" }}
->
-  <MenuItem value="">
-    <em>Select Status</em>
-  </MenuItem>
-  <MenuItem value="Addition">
-             Approved
-            </MenuItem>
-            <MenuItem value="Addition">
-            Declined
-            </MenuItem>
-</Select>
-            </Stack>
+                <Select
+                  value={reportType}
+                  onChange={handleReportType}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                >
+                  <MenuItem value="">
+                    <em>Select Status</em>
+                  </MenuItem>
+                  <MenuItem value="Addition">Approved</MenuItem>
+                  <MenuItem value="Addition">Declined</MenuItem>
+                </Select>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Stack>
+                <Typography variant="overline">Upload Date</Typography>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  spacing={0.5}
+                >
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DatePicker
+                      disableFuture
+                      label=""
+                      openTo="year"
+                      views={["year", "month", "day"]}
+                      value={dateThing}
+                      onChange={(newValue) => {
+                        setDateThing(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </LocalizationProvider>
+                  <Typography variant="overline"> To </Typography>
+
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DatePicker
+                      disableFuture
+                      label=""
+                      openTo="year"
+                      views={["year", "month", "day"]}
+                      value={dateThing}
+                      onChange={(newValue) => {
+                        setDateThing(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </LocalizationProvider>
+                </Stack>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Stack>
+                <Typography variant="overline">Change Date</Typography>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  spacing={0.5}
+                >
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DatePicker
+                      disableFuture
+                      label=""
+                      openTo="year"
+                      views={["year", "month", "day"]}
+                      value={dateThing}
+                      onChange={(newValue) => {
+                        setDateThing(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </LocalizationProvider>
+                  <Typography variant="overline"> To </Typography>
+
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DatePicker
+                      disableFuture
+                      label=""
+                      openTo="year"
+                      views={["year", "month", "day"]}
+                      value={dateThing}
+                      onChange={(newValue) => {
+                        setDateThing(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </LocalizationProvider>
+                </Stack>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} >
+              <Divider sx={{my: 2 }} />
+              <Stack direction="row" justifyContent="flex-end" spacing={3}>
+              <Button variant="text" size="large">Clear</Button>
+              <Button variant="contained" size="large">Generate</Button>
+
+              </Stack>
             </Grid>
           </Grid>
         </FormControl>

@@ -23,7 +23,6 @@ function EmployeeInquiryUpload(props) {
     setUploadType(event.target.value);
   };
 
-  
   return (
     <div>
       <Typography variant="h5" color="primary">
@@ -59,10 +58,19 @@ function EmployeeInquiryUpload(props) {
             </Select>
           </FormControl>
         </Stack>
-        <br/>
+        <br />
         <Typography variant="caption">Select File (*.csv)</Typography>
 
-        <Box sx={{  border: "2px solid #e2e2e2", borderStyle: "dashed", borderRadius:'5px', p:1, marginTop: "10px", py:5  }}>
+        <Box
+          sx={{
+            border: "2px solid #e2e2e2",
+            borderStyle: "dashed",
+            borderRadius: "5px",
+            p: 1,
+            marginTop: "10px",
+            py: 5,
+          }}
+        >
           <Stack direction="column" spacing={0.5}>
             <Stack
               direction="column"
@@ -73,16 +81,16 @@ function EmployeeInquiryUpload(props) {
               <DeleteIcon />
               <Typography variant="h6">Drag and drop files here</Typography>
               <Typography variant="body1">or</Typography>
-              <Typography variant="h6" color="primary">Browse files</Typography>
-
+              <Button variant="text">Browse files</Button>
               {/* <Button variant="outlined" startIcon={<DeleteIcon />}>
                 Upload file
               </Button> */}
             </Stack>
           </Stack>
         </Box>
-        <Typography variant="caption" color="text.hint">Accepted files are CSV</Typography>
-
+        <Typography variant="caption" color="text.hint">
+          Accepted files are CSV
+        </Typography>
       </Paper>
     </div>
   );
