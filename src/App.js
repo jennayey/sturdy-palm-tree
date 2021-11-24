@@ -29,6 +29,7 @@ import BenefitSummary from "./GLOES/BenefitSummary";
 import AccountProfile from "./GLOES/AccountProfile";
 import EmployeeInquiryUpload from "./GLOES/EmployeeInquiryUpload";
 import Reports from "./GLOES/Reports";
+import Maintenance from "./GLOES/Maintenance";
 const drawerWidth = 240;
 
 let cTheme = createTheme(customtheme);
@@ -126,7 +127,7 @@ function App(props) {
             </Typography>
           </ListItemButton>
 
-          <ListItemButton disabled>
+          <ListItemButton onClick={()=>setCurrentScreen(<Maintenance/>)}>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
