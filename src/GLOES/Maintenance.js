@@ -3,10 +3,8 @@ import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
-import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
@@ -14,10 +12,15 @@ import Button from "@mui/material/Button";
 
 import Grid from "@mui/material/Grid";
 
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DatePicker from "@mui/lab/DatePicker";
 import TextField from "@mui/material/TextField";
+
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+
 
 function Maintenance(props) {
   const [reportType, setReportType] = React.useState("");
@@ -117,6 +120,23 @@ function Maintenance(props) {
         <br /> 
         <Divider />
         <br />
+
+        <TableContainer>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Movement</TableCell>
+                <TableCell align="left">Old Value</TableCell>
+                <TableCell align="left">New Value</TableCell>
+                <TableCell align="left">Change Date</TableCell>
+                <TableCell align="left">User ID</TableCell>
+              </TableRow>
+            </TableHead>
+            
+          </Table>
+        </TableContainer>
+        <Typography variant="body1" align="center" sx={{my: 5}}> No search results</Typography>
+
         
       </Paper>
     </div>
