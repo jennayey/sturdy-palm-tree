@@ -27,7 +27,8 @@
       hint: 'rgba(0,0,0,0.38)'
     },
     background: {
-      default: '#eff8fa',
+      // default: '#eff8fa',
+    default: '#FFF'
     },
     
   },

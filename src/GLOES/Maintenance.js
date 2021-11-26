@@ -21,7 +21,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-
 function Maintenance(props) {
   const [reportType, setReportType] = React.useState("");
   const [siteName, setSiteName] = React.useState("");
@@ -47,23 +46,25 @@ function Maintenance(props) {
       <br />
 
       {/* <Typography variant="overline">Upload your files</Typography> */}
-{/* Search Employee Section */}
+      {/* Search Employee Section */}
 
       <Paper variant="outlined" sx={{ p: 2 }}>
-        <Typography variant="h6" color="primary">Search Employee</Typography>
-        <br /> 
+        <Typography variant="h6" color="primary">
+          Search Employee
+        </Typography>
+        <br />
         <Divider />
         <br />
         <FormControl sx={{ my: 1, minWidth: 120 }} fullWidth>
           <Typography variant="overline">Employee number</Typography>
 
-          <TextField id="outlined-basic" variant="outlined" />
+          <TextField id="outlined-basic" size="small" variant="filled" />
           <Grid container spacing={2} sx={{ mt: 1 }}>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Stack>
                 <Typography variant="overline">First Name</Typography>
 
-                <TextField id="outlined-basic" variant="outlined" />
+                <TextField variant="filled" hiddenLabel size="small"/>
               </Stack>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -98,26 +99,34 @@ function Maintenance(props) {
               Samsung Electro-Mechanics Philippines Corporation{" "}
             </MenuItem>
           </Select>
+          <br />
+          <Divider />
+          <br />
 
-          <br /> 
-        <Divider />
-        <br />
-      
-              <Stack direction="row" justifyContent="flex-end" spacing={3}>
-              <Button variant="text" size="large">Clear</Button>
-              <Button variant="contained" size="large">Search</Button>
-
-              </Stack>
-           
+          <Stack
+            direction="row"
+            justifyContent="flex-end"
+            spacing={3}
+            sx={{ mt: 2 }}
+          >
+            <Button variant="text" size="large">
+              Clear
+            </Button>
+            <Button variant="contained" size="large">
+              Search
+            </Button>
+          </Stack>
         </FormControl>
         <br />
       </Paper>
-<br/>
-{/* Search Results Section */}
+      <br />
+      {/* Search Results Section */}
 
       <Paper variant="outlined" sx={{ p: 2 }}>
-        <Typography variant="h6" color="primary">Search Results</Typography>
-        <br /> 
+        <Typography variant="h6" color="primary">
+          Search Results
+        </Typography>
+        <br />
         <Divider />
         <br />
 
@@ -132,12 +141,12 @@ function Maintenance(props) {
                 <TableCell align="left">User ID</TableCell>
               </TableRow>
             </TableHead>
-            
           </Table>
         </TableContainer>
-        <Typography variant="body1" align="center" sx={{my: 5}}> No search results</Typography>
-
-        
+        <Typography variant="body1" align="center" sx={{ my: 5 }}>
+          {" "}
+          No search results
+        </Typography>
       </Paper>
     </div>
   );

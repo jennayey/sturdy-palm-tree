@@ -22,7 +22,6 @@ import customtheme from "./customtheme";
 import ListItemButton from "@mui/material/ListItemButton";
 import MainContent from "./MainContent";
 
-
 import Home from "./GLOES/Home";
 import Enrollment from "./GLOES/Enrollment";
 import BenefitSummary from "./GLOES/BenefitSummary";
@@ -30,13 +29,14 @@ import AccountProfile from "./GLOES/AccountProfile";
 import EmployeeInquiryUpload from "./GLOES/EmployeeInquiryUpload";
 import Reports from "./GLOES/Reports";
 import Maintenance from "./GLOES/Maintenance";
+import UserProfile from "./GLOES/UserProfile";
 const drawerWidth = 240;
 
 let cTheme = createTheme(customtheme);
 function App(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [currentScreen, setCurrentScreen] = React.useState(<Home/>);
+  const [currentScreen, setCurrentScreen] = React.useState(<Home />);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -46,34 +46,34 @@ function App(props) {
     <div>
       <Toolbar />
       <List sx={{ marginTop: `20px` }}>
-          <ListItemButton onClick={()=>setCurrentScreen(<Home/>)} >
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Home" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
+        <ListItemButton onClick={() => setCurrentScreen(<Home />)}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Home" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
 
-          <ListItemButton onClick={()=>setCurrentScreen(<Enrollment/>)}>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Enrollment" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
+        <ListItemButton onClick={() => setCurrentScreen(<Enrollment />)}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Enrollment" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
 
-          <ListItemButton onClick={()=>setCurrentScreen(<AccountProfile/>)} >
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Account Profile" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
+        <ListItemButton onClick={() => setCurrentScreen(<AccountProfile />)}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Account Profile" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
 
-          <ListItemButton onClick={()=>setCurrentScreen(<BenefitSummary/>)}>
+        <ListItemButton onClick={() => setCurrentScreen(<BenefitSummary />)}>
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
@@ -83,73 +83,93 @@ function App(props) {
         </ListItemButton>
 
         <ListItemButton disabled>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Employee Inquiry" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Employee Inquiry" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
 
-          <ListItemButton  onClick={()=>setCurrentScreen(<EmployeeInquiryUpload/>)}>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Employee Inquiry Upload" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
+        <ListItemButton
+          onClick={() => setCurrentScreen(<EmployeeInquiryUpload />)}
+        >
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText
+              primary="Employee Inquiry Upload"
+              disableTypography="true"
+            />
+          </Typography>
+        </ListItemButton>
 
-          <ListItemButton disabled>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Policy Inquiry" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
+        <ListItemButton disabled>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Policy Inquiry" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
 
-          <ListItemButton disabled>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Account Policy" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
+        <ListItemButton disabled>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Account Policy" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
 
-          <ListItemButton onClick={()=>setCurrentScreen(<Reports/>)}>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Reports" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
+        <ListItemButton onClick={() => setCurrentScreen(<Reports />)}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Reports" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
 
-          <ListItemButton onClick={()=>setCurrentScreen(<Maintenance/>)}>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary="Maintenance" disableTypography="true" />
-            </Typography>
-          </ListItemButton>
-     
+        <ListItemButton onClick={() => setCurrentScreen(<Maintenance />)}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Maintenance" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
       </List>
 
       <Divider />
       <List>
-        {["User Profile", "Quick Guide", "Log Out"].map((text, index) => (
-          <ListItemButton key={text} disabled>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <Typography variant="body2" noWrap component="div">
-              <ListItemText primary={text} disableTypography="true" />
-            </Typography>
-          </ListItemButton>
-        ))}
+        <ListItemButton onClick={() => setCurrentScreen(<UserProfile />)}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="User Profile" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
+
+        <ListItemButton disabled>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Quick Guide" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
+
+        <ListItemButton disabled>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Log Out" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
       </List>
       <Divider />
     </div>
@@ -170,10 +190,10 @@ function App(props) {
             ml: { md: `${drawerWidth}px` },
             zIndex: 2000,
             backgroundColor: "white",
-            borderTop: "10px solid #005db9"
+            borderTop: "10px solid #005db9",
           }}
         >
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between"}}>
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
             <IconButton
               color="primary"
               aria-label="open drawer"
@@ -186,7 +206,7 @@ function App(props) {
             <Typography color="primary" variant="h6" noWrap component="div">
               Cocolife MyPolicy
             </Typography>
-            
+
             <IconButton color="primary" aria-label="profile" href="">
               <AccountCircle />
             </IconButton>
@@ -207,10 +227,11 @@ function App(props) {
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
-              display: {sm: "block"},
+              display: { sm: "block" },
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
                 width: drawerWidth,
+              
               },
             }}
           >
@@ -224,6 +245,7 @@ function App(props) {
                 boxSizing: "border-box",
                 width: drawerWidth,
               },
+              padding: '20px',
             }}
             open
           >

@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 function BenefitSummary(props) {
   return (
     <div>
-      <Typography variant="h5" color="primary">Benefit Summary</Typography>
+      <Typography variant="h5" color="text.primary">Benefit Summary</Typography>
       <br />
       <Typography variant="overline">General Information</Typography>
       <Paper variant="outlined" sx={{ p: 2 }}>

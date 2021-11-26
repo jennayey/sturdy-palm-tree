@@ -30,7 +30,7 @@ function EmployeeInquiryUpload(props) {
       </Typography>
       <br />
 
-      <Typography variant="overline">Upload your files</Typography>
+      <Typography variant="overline">Your profile</Typography>
 
       <Paper variant="outlined" sx={{ p: 2 }}>
         <Stack
