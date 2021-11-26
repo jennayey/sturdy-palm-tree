@@ -48,11 +48,9 @@ function Maintenance(props) {
       {/* <Typography variant="overline">Upload your files</Typography> */}
       {/* Search Employee Section */}
 
-      <Paper variant="outlined" sx={{ p: 2 }}>
         <Typography variant="h6" color="primary">
           Search Employee
         </Typography>
-        <br />
         <Divider />
         <br />
         <FormControl sx={{ my: 1, minWidth: 120 }} fullWidth>
@@ -118,7 +116,6 @@ function Maintenance(props) {
           </Stack>
         </FormControl>
         <br />
-      </Paper>
       <br />
       {/* Search Results Section */}
 

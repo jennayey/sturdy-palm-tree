@@ -27,7 +27,7 @@ function UserProfile(props) {
       <br />
       <br />
 
-      <Typography variant="h6" sx={{ marginBottom: "10px" }}>
+      <Typography variant="h5" sx={{ marginBottom: "10px" }}>
         Personal Information
       </Typography>
       <Divider sx={{ marginBottom: "15px" }} />
@@ -95,9 +95,19 @@ User ID            </Typography>
             />
           </Stack>
         </Grid>
+        <Grid item xs={12} sx={{mt:3}}>
+        <Stack spacing={2} direction="row">
+        <Button variant="contained" size="large">
+Update Information          </Button>
+          <Button variant="text" size="large">
+             Cancel
+            </Button>
+        </Stack>
+        </Grid>
+
       </Grid>
 
-      <Typography variant="h6" sx={{ marginBottom: "10px", marginTop: "100px" }}>
+      <Typography variant="h5" sx={{ marginBottom: "10px", marginTop: "100px" }}>
         Change Password
       </Typography>
       <Divider sx={{ marginBottom: "15px" }} />
