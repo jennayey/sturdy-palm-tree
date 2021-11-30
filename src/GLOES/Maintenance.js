@@ -48,7 +48,7 @@ function Maintenance(props) {
       {/* <Typography variant="overline">Upload your files</Typography> */}
       {/* Search Employee Section */}
 
-        <Typography variant="h6" color="primary">
+        <Typography variant="h6" color="text.primary">
           Search Employee
         </Typography>
         <Divider />
@@ -56,13 +56,13 @@ function Maintenance(props) {
         <FormControl sx={{ my: 1, minWidth: 120 }} fullWidth>
           <Typography variant="overline">Employee number</Typography>
 
-          <TextField id="outlined-basic" size="small" variant="filled" />
+          <TextField id="outlined-basic" variant="outlined" />
           <Grid container spacing={2} sx={{ mt: 1 }}>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Stack>
                 <Typography variant="overline">First Name</Typography>
 
-                <TextField variant="filled" hiddenLabel size="small"/>
+                <TextField variant="outlined" hiddenLabel />
               </Stack>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -120,7 +120,7 @@ function Maintenance(props) {
       {/* Search Results Section */}
 
       <Paper variant="outlined" sx={{ p: 2 }}>
-        <Typography variant="h6" color="primary">
+        <Typography variant="h6" color="text.primary">
           Search Results
         </Typography>
         <br />

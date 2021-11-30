@@ -30,9 +30,12 @@ import EmployeeInquiryUpload from "./GLOES/EmployeeInquiryUpload";
 import Reports from "./GLOES/Reports";
 import Maintenance from "./GLOES/Maintenance";
 import UserProfile from "./GLOES/UserProfile";
+
+import cocolife from "./assets/cocolife-horizontal.png"
 const drawerWidth = 240;
 
-let cTheme = createTheme(customtheme);
+
+// let cTheme = createTheme(customtheme);
 function App(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -82,14 +85,14 @@ function App(props) {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton disabled>
+        {/* <ListItemButton disabled>
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Employee Inquiry" disableTypography="true" />
           </Typography>
-        </ListItemButton>
+        </ListItemButton> */}
 
         <ListItemButton
           onClick={() => setCurrentScreen(<EmployeeInquiryUpload />)}
@@ -105,23 +108,23 @@ function App(props) {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton disabled>
+        {/* <ListItemButton disabled>
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Policy Inquiry" disableTypography="true" />
           </Typography>
-        </ListItemButton>
+        </ListItemButton> */}
 
-        <ListItemButton disabled>
+        {/* <ListItemButton disabled>
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Account Policy" disableTypography="true" />
           </Typography>
-        </ListItemButton>
+        </ListItemButton> */}
 
         <ListItemButton onClick={() => setCurrentScreen(<Reports />)}>
           <ListItemIcon>
@@ -162,7 +165,7 @@ function App(props) {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton disabled>
+        <ListItemButton component="a" href="/">
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
@@ -179,7 +182,6 @@ function App(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <ThemeProvider theme={cTheme}>
       <Box sx={{ display: "flex", height: "100%" }}>
         <CssBaseline />
         <AppBar
@@ -203,9 +205,12 @@ function App(props) {
             >
               <MenuIcon />
             </IconButton>
-            <Typography color="primary" variant="h6" noWrap component="div">
+            {/* <Typography color="primary" variant="h6" noWrap component="div">
               Cocolife MyPolicy
-            </Typography>
+            </Typography> */
+            }
+            
+            <img src={cocolife} style={{height: '25px'}}/>
 
             <IconButton color="primary" aria-label="profile" href="">
               <AccountCircle />
@@ -264,7 +269,6 @@ function App(props) {
           <MainContent screen={currentScreen} />
         </Box>
       </Box>
-    </ThemeProvider>
   );
 }
 export default App;
