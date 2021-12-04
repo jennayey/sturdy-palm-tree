@@ -16,11 +16,17 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+
+
+
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import customtheme from "./customtheme";
 import ListItemButton from "@mui/material/ListItemButton";
 import MainContent from "./MainContent";
+
+
 
 import Home from "./GLOES/Home";
 import Enrollment from "./GLOES/Enrollment";
@@ -205,12 +211,16 @@ function App(props) {
             >
               <MenuIcon />
             </IconButton>
-            {/* <Typography color="primary" variant="h6" noWrap component="div">
-              Cocolife MyPolicy
-            </Typography> */
-            }
-            
-            <img src={cocolife} style={{height: '25px'}}/>
+            <Stack direction="row" spacing={2}
+          divider={<Divider orientation="vertical" flexItem />}alignItems="center" >
+            <Box>
+              {" "}
+              <img src={cocolife} style={{ height: "25px" }} />
+            </Box>
+            <Typography color="primary" variant="h6" noWrap component="div">
+               GLOES
+            </Typography>
+          </Stack>
 
             <IconButton color="primary" aria-label="profile" href="">
               <AccountCircle />

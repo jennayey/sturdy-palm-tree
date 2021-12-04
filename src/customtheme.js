@@ -40,9 +40,13 @@
     h2: {
       fontFamily: 'GothamMedium',    
     },
+    h4: {
+      fontFamily: 'GothamMedium',
+    },
     h5: {
       fontFamily: 'GothamMedium',
     },
+
     h6: {
       fontFamily: 'GothamMedium',
       
@@ -54,7 +58,7 @@
       fontSize: '16px'
     },
     body2:{
-      fontFamily: 'GothamMedium',
+      fontFamily: 'GothamRegular',
     
     },
     span: {
@@ -71,10 +75,16 @@
       fontSize: ".9em"
     },
     subtitle1:  {
+      fontFamily: "GothamRegular",
+    },
+    subtitle2: {
       fontFamily: "GothamMedium",
     },
+    button: {
+      fontFamily: "GothamMedium",
+
+    },
   
-    fontWeightBold: 700,
   },
 };
 

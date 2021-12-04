@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 
 import Link from "@mui/material/Link";
 
-import cocolife from "../assets/cocolife-horizontal.png";
+import cocolife from "./assets/cocolife-horizontal.png";
 
 function Login() {
   return (
@@ -49,9 +49,18 @@ function Login() {
               variant="contained"
               size="large"
               sx={{ mt: 3 }}
-              href="/home"
+              href="/gloes"
             >
-              Login{" "}
+              Login to GLOES{" "}
+            </Button>
+<br/>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ mt: 3 }}
+              href="/mypolicy"
+            >
+              Login to MyPolicy{" "}
             </Button>
           </FormControl>
           <Typography variant="caption">

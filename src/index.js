@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Login from "./GLOES/login";
+import Login from "./Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import customtheme from "./customtheme";
 
+import MyPolicyHome from "./MyPolicy/MyPolicyHome"
 let cTheme = createTheme(customtheme);
 
 ReactDOM.render(
@@ -19,7 +20,10 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<Login />}/>
      
-          <Route path="home" element={<App />}/>
+          <Route path="gloes" element={<App />}/>
+          <Route path="mypolicy" element={<MyPolicyHome />}/>
+
+
 
         </Routes>
       </ThemeProvider>

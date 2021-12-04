@@ -7,8 +7,8 @@ function MainContent (props) {
           sx={{
             height: "100%",
             flexGrow: 1,
-            py: 5,
-            px: 3,
+            pt: {xs:5},
+            px: {sm: 2, lg:3},
             width: "100%",
             marginTop:"50px" 
           }}
