@@ -18,15 +18,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
-
-
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import customtheme from "./customtheme";
 import ListItemButton from "@mui/material/ListItemButton";
 import MainContent from "./MainContent";
-
-
 
 import Home from "./GLOES/Home";
 import Enrollment from "./GLOES/Enrollment";
@@ -52,7 +48,7 @@ function App(props) {
   };
 
   const drawer = (
-    <div>
+    <Box>
       <Toolbar />
       <List sx={{ marginTop: `20px` }}>
         <ListItemButton onClick={() => setCurrentScreen(<Home />)}>
@@ -181,14 +177,14 @@ function App(props) {
         </ListItemButton>
       </List>
       <Divider />
-    </div>
+    </Box>
   );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-      <Box sx={{ display: "flex", height: "100%" }}>
+      <Box>
         <CssBaseline />
         <AppBar
           position="fixed"
@@ -202,7 +198,26 @@ function App(props) {
           }}
         >
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-            <IconButton
+           
+            <Stack
+            direction="row"
+            spacing={2}
+            divider={<Divider orientation="vertical" flexItem />}
+            alignItems="center"
+          >
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <img src={cocolife} style={{ height: "20px" }} />
+            </Box>
+            <Typography
+              color="primary"
+              variant="subtitle"
+              noWrap
+              component="div"
+            >
+              GLOES
+            </Typography>
+          </Stack>
+          <IconButton
               color="primary"
               aria-label="open drawer"
               edge="start"
@@ -211,20 +226,7 @@ function App(props) {
             >
               <MenuIcon />
             </IconButton>
-            <Stack direction="row" spacing={2}
-          divider={<Divider orientation="vertical" flexItem />}alignItems="center" >
-            <Box>
-              {" "}
-              <img src={cocolife} style={{ height: "25px" }} />
-            </Box>
-            <Typography color="primary" variant="h6" noWrap component="div">
-               GLOES
-            </Typography>
-          </Stack>
 
-            <IconButton color="primary" aria-label="profile" href="">
-              <AccountCircle />
-            </IconButton>
           </Toolbar>
         </AppBar>
         <Box

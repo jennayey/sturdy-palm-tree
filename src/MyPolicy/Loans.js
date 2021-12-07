@@ -54,7 +54,7 @@ function Loans(props) {
           Policy Agent History / Transfer of Business
         </Typography> */}
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <Table aria-label="simple table">
             <TableHead>
               <TableRow sx={{ fontWeight: "600" }}>
                 <TableCell align="center" sx={{ fontWeight: "600" }}>

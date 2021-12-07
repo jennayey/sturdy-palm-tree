@@ -42,7 +42,7 @@ function Maintenance(props) {
   return (
     <Box sx={{ width: '100%' }}>
       <Typography variant="h5" color="primary">
-        Maintenance
+        Maintenance2
       </Typography>
       <br />
 
@@ -54,7 +54,7 @@ function Maintenance(props) {
         </Typography>
         <Divider />
         <br />
-      <FormControl sx={{ my: 1}} fullWidth>
+       {/* <FormControl sx={{ my: 1}} fullWidth>
           <Typography variant="overline">Employee number</Typography>
 
           <TextField id="outlined-basic" variant="outlined" />
@@ -115,7 +115,7 @@ function Maintenance(props) {
               Search
             </Button>
           </Stack>
-        </FormControl>
+        </FormControl>  */}
         <br />
       <br />
       {/* Search Results Section */}

@@ -28,7 +28,8 @@
     },
     background: {
       // default: '#eff8fa',
-    default: '#FFF'
+    default: 'rgba(248,250,253,1)'
+    
     },
     
   },
