@@ -18,7 +18,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import customtheme from "../customtheme";
+import customtheme from "../theme/customtheme";
 import ListItemButton from "@mui/material/ListItemButton";
 import MainContent from "./../MainContent";
 import Stack from "@mui/material/Stack";
@@ -145,7 +145,7 @@ function MyPolicyHome(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box>
+     <Box sx={{display: {xs: 'block', md:'flex'}}}>
         <CssBaseline />
         <AppBar
           position="fixed"
@@ -156,8 +156,6 @@ function MyPolicyHome(props) {
             zIndex: 2000,
             backgroundColor: "white",
             borderTop: "10px solid #005db9",
-            boxShadow: "none",
-            borderBottom: "1px solid #eee"
           }}
         >
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -194,7 +192,7 @@ function MyPolicyHome(props) {
         </AppBar>
         <Box
           component="nav"
-          sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
+          sx={{ width: { xs: drawerWidth }, flexShrink: { md: 0} }}
           aria-label="mailbox folders"
         >
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -207,7 +205,7 @@ function MyPolicyHome(props) {
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
-              display: { sm: "block" },
+              display: { xs: "block" },
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
                 width: drawerWidth,
@@ -238,8 +236,8 @@ function MyPolicyHome(props) {
             height: "100%",
             flexGrow: 1,
             p: 3,
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-          }}
+            width: {xs: '100%', md: `calc(100% - ${drawerWidth}px)` },
+           }}
         >
           <MainContent screen={currentScreen} />
         </Box>

@@ -18,7 +18,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import customtheme from "../customtheme";
+import customtheme from "../theme/customtheme";
 import ListItemButton from "@mui/material/ListItemButton";
 import MainContent from "./../MainContent";
 import Stack from "@mui/material/Stack";
@@ -57,7 +57,7 @@ const registeredList = [
   ];
 function BasicInformation(props) {
   return (
-    <Box>
+    <Box sx={{ width: '100%' }}>
       <Typography variant="h4" sx={{ mb: 5 }}>
         Basic Information
       </Typography>

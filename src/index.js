@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import customtheme from "./customtheme";
+import customtheme from "./theme/customtheme";
 
 import MyPolicyHome from "./MyPolicy/MyPolicyHome"
 let cTheme = createTheme(customtheme);

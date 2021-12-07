@@ -55,25 +55,26 @@
 
     body1: {
       fontFamily: 'GothamRegular',
-      fontWeight: '500',
       fontSize: '16px'
     },
     body2:{
       fontFamily: 'GothamRegular',
+      fontSize: '14px'
+
     
     },
     span: {
       fontFamily: "GothamRegular"
     },
     overline: {
-      fontFamily: "GothamMedium",
+      fontFamily: "GothamRegular",
       fontWeight: '500',
-      fontSize: ".9em"
+      fontSize: "10px"
 
     },
     caption: {
-      fontFamily: "GothamMedium",
-      fontSize: ".9em"
+      fontFamily: "GothamRegular",
+      fontSize: "12px"
     },
     subtitle1:  {
       fontFamily: "GothamRegular",

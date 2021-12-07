@@ -20,7 +20,7 @@ import Stack from "@mui/material/Stack";
 
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import customtheme from "./customtheme";
+import customtheme from "./theme/customtheme";
 import ListItemButton from "@mui/material/ListItemButton";
 import MainContent from "./MainContent";
 
@@ -184,103 +184,103 @@ function App(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-      <Box>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
-          sx={{
-            width: `100%`,
+    <Box sx={{display: {xs: 'block', md:'flex'}}}>
+    <CssBaseline />
+    <AppBar
+      position="fixed"
+      sx={{
+        width: `100%`,
 
-            ml: { md: `${drawerWidth}px` },
-            zIndex: 2000,
-            backgroundColor: "white",
-            borderTop: "10px solid #005db9",
-          }}
-        >
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-           
-            <Stack
-            direction="row"
-            spacing={2}
-            divider={<Divider orientation="vertical" flexItem />}
-            alignItems="center"
-          >
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <img src={cocolife} style={{ height: "20px" }} />
-            </Box>
-            <Typography
-              color="primary"
-              variant="subtitle"
-              noWrap
-              component="div"
-            >
-              GLOES
-            </Typography>
-          </Stack>
-          <IconButton
-              color="primary"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { md: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-
-          </Toolbar>
-        </AppBar>
-        <Box
-          component="nav"
-          sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
-          aria-label="mailbox folders"
-        >
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            sx={{
-              display: { sm: "block" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: drawerWidth,
-              
-              },
-            }}
-          >
-            {drawer}
-          </Drawer>
-          <Drawer
-            variant="permanent"
-            sx={{
-              display: { xs: "none", md: "block" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: drawerWidth,
-              },
-              padding: '20px',
-            }}
-            open
-          >
-            {drawer}
-          </Drawer>
+        ml: { md: `${drawerWidth}px` },
+        zIndex: 2000,
+        backgroundColor: "white",
+        borderTop: "10px solid #005db9",
+      }}
+    >
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+       
+        <Stack
+        direction="row"
+        spacing={2}
+        divider={<Divider orientation="vertical" flexItem />}
+        alignItems="center"
+      >
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <img src={cocolife} style={{ height: "20px" }} />
         </Box>
-        <Box
+        <Typography
+          color="primary"
+          variant="subtitle"
+          noWrap
           component="div"
-          sx={{
-            height: "100%",
-            flexGrow: 1,
-            p: 3,
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-          }}
         >
-          <MainContent screen={currentScreen} />
-        </Box>
-      </Box>
+          GLOES
+        </Typography>
+      </Stack>
+      <IconButton
+          color="primary"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          sx={{ mr: 2, display: { md: "none" } }}
+        >
+          <MenuIcon />
+        </IconButton>
+
+      </Toolbar>
+    </AppBar>
+    <Box
+      component="nav"
+      sx={{ width: { xs: drawerWidth }, flexShrink: { md: 0} }}
+      aria-label="mailbox folders"
+    >
+      {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+      <Drawer
+        container={container}
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: "block" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: drawerWidth,
+          
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
+      <Drawer
+        variant="permanent"
+        sx={{
+          display: { xs: "none", md: "block" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: drawerWidth,
+          },
+          padding: '20px',
+        }}
+        open
+      >
+        {drawer}
+      </Drawer>
+    </Box>
+    <Box
+      component="div"
+      sx={{
+        height: "100%",
+        flexGrow: 1,
+        p: 3,
+        width: {xs: '100%', md: `calc(100% - ${drawerWidth}px)` },
+       }}
+    >
+      <MainContent screen={currentScreen} />
+    </Box>
+  </Box>
   );
 }
 export default App;
