@@ -49,10 +49,9 @@ const premiumPaymentList = [
 function Ledger(props) {
   return (
     <Box>
-      <Typography variant="h4" sx={{ mb: 5 }}>
+      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
         Ledger{" "}
       </Typography>
-      <br />
       <Typography variant="h6">Premium Payments</Typography>
       <Typography variant="body1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

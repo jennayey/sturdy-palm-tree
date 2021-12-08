@@ -38,20 +38,21 @@ function Reports(props) {
 
   return (
     <div>
-      <Typography variant="h5" color="primary">
+     <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
         Reports
       </Typography>
-      <br />
 
       {/* <Typography variant="overline">Upload your files</Typography> */}
-
-      <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="h6" >Generate Report</Typography>
+      <Divider sx={{ mt:1 }}/>
+      <Box sx={{ mt:3 }}>
         <FormControl sx={{ my: 1, minWidth: 120 }} fullWidth>
           <Typography variant="overline">Report Type</Typography>
 
           <Select
             value={reportType}
             onChange={handleReportType}
+            size="small" 
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
           >
@@ -71,6 +72,7 @@ function Reports(props) {
           <Select
             value={siteName}
             onChange={handleSiteName}
+            size="small" 
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
           >
@@ -89,6 +91,7 @@ function Reports(props) {
                 <Select
                   value={reportType}
                   onChange={handleReportType}
+                  size="small" 
                   displayEmpty
                   inputProps={{ "aria-label": "Without label" }}
                 >
@@ -106,6 +109,7 @@ function Reports(props) {
                 <Select
                   value={reportType}
                   onChange={handleReportType}
+                  size="small" 
                   displayEmpty
                   inputProps={{ "aria-label": "Without label" }}
                 >
@@ -129,6 +133,7 @@ function Reports(props) {
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DatePicker
                       disableFuture
+                      
                       label=""
                       openTo="year"
                       views={["year", "month", "day"]}
@@ -136,7 +141,7 @@ function Reports(props) {
                       onChange={(newValue) => {
                         setDateThing(newValue);
                       }}
-                      renderInput={(params) => <TextField {...params} />}
+                      renderInput={(params) => <TextField size="small"  {...params} />}
                     />
                   </LocalizationProvider>
                   <Typography variant="overline"> To </Typography>
@@ -151,7 +156,7 @@ function Reports(props) {
                       onChange={(newValue) => {
                         setDateThing(newValue);
                       }}
-                      renderInput={(params) => <TextField {...params} />}
+                      renderInput={(params) => <TextField size="small"  {...params} />}
                     />
                   </LocalizationProvider>
                 </Stack>
@@ -176,7 +181,7 @@ function Reports(props) {
                       onChange={(newValue) => {
                         setDateThing(newValue);
                       }}
-                      renderInput={(params) => <TextField {...params} />}
+                      renderInput={(params) => <TextField size="small"  {...params} />}
                     />
                   </LocalizationProvider>
                   <Typography variant="overline"> To </Typography>
@@ -191,7 +196,7 @@ function Reports(props) {
                       onChange={(newValue) => {
                         setDateThing(newValue);
                       }}
-                      renderInput={(params) => <TextField {...params} />}
+                      renderInput={(params) => <TextField size="small"  {...params} />}
                     />
                   </LocalizationProvider>
                 </Stack>
@@ -208,7 +213,7 @@ function Reports(props) {
           </Grid>
         </FormControl>
         <br />
-      </Paper>
+      </Box>
     </div>
   );
 }

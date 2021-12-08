@@ -5,25 +5,24 @@ import Grid from "@mui/material/Grid";
 function BenefitSummary(props) {
   return (
     <div>
-      <Typography variant="h5" color="primary">Benefit Summary</Typography>
-      <br />
-      <Typography variant="overline">General Information</Typography>
-      <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>Benefit Summary</Typography>
+      <Typography variant="subtitle2">General Information</Typography>
+      <Paper variant="outlined" sx={{ p: 2, mt:1 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={4} lg={2} xl={2}>
-            <Typography variant="caption">Policy Number</Typography>
+            <Typography variant="overline" color="text.hint">Policy Number</Typography>
             <Typography variant="subtitle1">
               T-20-077
             </Typography>
           </Grid>
           <Grid item xs={12} md={12} lg={6} xl={4}>
-            <Typography variant="caption">Policy Holder</Typography>
+            <Typography variant="overline" color="text.hint">Policy Holder</Typography>
             <Typography variant="subtitle1" >
               Samsung Electro-Mechanics Philippines Corporation
             </Typography>
           </Grid>
           <Grid item xs={12} md={12} lg={4} xl={4}>
-            <Typography variant="caption">Period Coverage</Typography>
+            <Typography variant="overline" color="text.hint">Period Coverage</Typography>
             <Typography variant="subtitle1">
               07/14/2020 - 07/13/2021
             </Typography>
@@ -32,8 +31,8 @@ function BenefitSummary(props) {
       </Paper>
 
       <br />
-      <Typography variant="overline">Description of Benefits</Typography>
-      <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="subtitle2">Description of Benefits</Typography>
+      <Paper variant="outlined" sx={{ p: 2, mt:1 }}>
         <Typography variant="body1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor

@@ -16,33 +16,30 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 
+import Link from "@mui/material/Link";
+
 import { borders } from "@mui/system";
 
 function UserProfile(props) {
   return (
     <div>
-      <Typography variant="h5" color="primary">
+      <Typography variant="h4" color="primary" sx={{ mb: 5 }}>
         User Profile
       </Typography>
-      <br />
-      <br />
 
-      <Typography variant="h5" sx={{ marginBottom: "10px" }}>
-        Personal Information
-      </Typography>
-      <Divider sx={{ marginBottom: "15px" }} />
+      <Typography variant="h6">Personal Information</Typography>
+      <Divider sx={{ mt: 1 }} />
       <Grid container spacing={2} sx={{ mt: 1 }}>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Stack>
-            <Typography color="text" variant="caption">
+            <Typography color="text" variant="overline">
               First Name
             </Typography>
 
             <TextField
-              sx={{ marginTop: "10px" }}
               id="outlined-basic"
               size="small"
-              variant="filled"
+              variant="outlined"
               hiddenLabel
               value="Benjamin"
             />
@@ -50,15 +47,14 @@ function UserProfile(props) {
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Stack>
-            <Typography color="text" variant="caption">
-             Middle Name
+            <Typography color="text" variant="overline">
+              Middle Name
             </Typography>
 
             <TextField
-              sx={{ marginTop: "10px" }}
               id="outlined-basic"
               size="small"
-              variant="filled"
+              variant="outlined"
               hiddenLabel
               value="Arellano"
             />
@@ -66,15 +62,14 @@ function UserProfile(props) {
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Stack>
-            <Typography color="text" variant="caption">
+            <Typography color="text" variant="overline">
               Last Name
             </Typography>
 
             <TextField
-              sx={{ marginTop: "10px" }}
               id="outlined-basic"
               size="small"
-              variant="filled"
+              variant="outlined"
               hiddenLabel
               value="Bautista Jr"
             />
@@ -82,98 +77,106 @@ function UserProfile(props) {
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Stack>
-            <Typography color="text" variant="caption">
-User ID            </Typography>
+            <Typography color="text" variant="overline">
+              User ID{" "}
+            </Typography>
 
             <TextField
-              sx={{ marginTop: "10px" }}
               id="outlined-basic"
               size="small"
-              variant="filled"
+              variant="outlined"
               hiddenLabel
               value="23242733"
             />
           </Stack>
         </Grid>
-        <Grid item xs={12} sx={{mt:3}}>
-        <Stack spacing={2} direction="row">
-        <Button variant="contained" size="large">
-Update Information          </Button>
-          <Button variant="text" size="large">
-             Cancel
+        <Grid item xs={12} sx={{ mt: 3 }}>
+          <Stack spacing={2} direction="row">
+            <Button variant="contained" size="large">
+              Update Information{" "}
             </Button>
-        </Stack>
+            <Button variant="text" size="large">
+              Cancel
+            </Button>
+          </Stack>
         </Grid>
-
       </Grid>
 
-      <Typography variant="h5" sx={{ marginBottom: "10px", marginTop: "100px" }}>
+      <Typography
+        variant="h6"
+        sx={{ marginBottom: "10px", marginTop: "100px" }}
+      >
         Change Password
       </Typography>
-      <Divider sx={{ marginBottom: "15px" }} />
+      <Divider sx={{ mt:1 }}/>
       <Grid container spacing={2} sx={{ mt: 1 }}>
         <Grid item xs={12} sm={4}>
           <Stack>
-            <Typography color="text" variant="caption">
+            <Typography color="text" variant="overline">
               Old Password
             </Typography>
 
             <TextField
-              sx={{ marginTop: "10px" }}
               id="outlined-basic"
               size="small"
-              variant="filled"
+              variant="outlined"
               hiddenLabel
               value="Benjamin"
               type="password"
             />
           </Stack>
-          <Stack sx= {{ marginTop: "20px"}} >
-            <Typography color="text" variant="caption">
+          <Stack sx={{ marginTop: "20px" }}>
+            <Typography color="text" variant="overline">
               New Password
             </Typography>
 
             <TextField
-              sx={{ marginTop: "10px" }}
               id="outlined-basic"
               size="small"
-              variant="filled"
+              variant="outlined"
               hiddenLabel
               value="Benjamin"
               type="password"
             />
           </Stack>
 
-
-          <Stack sx= {{ marginTop: "20px"}} >
-            <Typography color="text" variant="caption">
+          <Stack sx={{ marginTop: "20px" }}>
+            <Typography color="text" variant="overline">
               Confirm New Password
             </Typography>
 
             <TextField
-              sx={{ marginTop: "10px" }}
               id="outlined-basic"
               size="small"
-              variant="filled"
+              variant="outlined"
               hiddenLabel
               value="Benjamin"
               type="password"
             />
           </Stack>
-         
-           
         </Grid>
-        <Grid item xs={12} sx={{mt:3}}>
-        <Stack spacing={2} direction="row">
-        <Button variant="contained" size="large">
-Update Password            </Button>
-          <Button variant="text" size="large">
-              I forgot my password
+        <Grid item xs={12} sx={{ mt: 3, mb: 3 }}>
+          <Stack spacing={2} direction="row">
+            <Button variant="contained" size="large">
+              Update Password{" "}
             </Button>
-        </Stack>
+            
+          </Stack>
+         <Box sx={{mt:2}}>
+         <Typography variant="caption" >
+              Forgot your{" "}
+              <Link href="#" sx={{ textDecoration: "none" }} color="primary">
+                username
+              </Link>{" "}
+              or{" "}
+              <Link href="#" sx={{ textDecoration: "none" }} color="primary">
+                password
+              </Link>
+              ?
+            </Typography>
+         </Box>
         </Grid>
-
-         </Grid>
+      </Grid>
     </div>
   );
 }

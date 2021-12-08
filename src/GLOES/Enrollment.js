@@ -5,8 +5,7 @@ import Grid from "@mui/material/Grid";
 function Enrollment(props) {
   return (
     <div>
-      <Typography variant="h5" color="primary">Enrollment</Typography>
-      <br />
+      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>Enrollment</Typography>
       
     </div>
   );

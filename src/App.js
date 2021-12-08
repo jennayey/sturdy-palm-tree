@@ -195,10 +195,20 @@ function App(props) {
         zIndex: 2000,
         backgroundColor: "white",
         borderTop: "10px solid #005db9",
+        boxShadow: 'none',
+            borderBottom: '1px solid #ddd',
       }}
     >
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-       
+      <Toolbar sx={{ display: "flex", justifyContent: "flex-start" }}>
+      <IconButton
+          color="primary"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          sx={{ mr: 2, display: { md: "none" } }}
+        >
+          <MenuIcon />
+        </IconButton>
         <Stack
         direction="row"
         spacing={2}
@@ -217,15 +227,7 @@ function App(props) {
           GLOES
         </Typography>
       </Stack>
-      <IconButton
-          color="primary"
-          aria-label="open drawer"
-          edge="start"
-          onClick={handleDrawerToggle}
-          sx={{ mr: 2, display: { md: "none" } }}
-        >
-          <MenuIcon />
-        </IconButton>
+     
 
       </Toolbar>
     </AppBar>

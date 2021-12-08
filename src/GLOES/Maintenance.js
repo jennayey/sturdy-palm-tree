@@ -41,10 +41,9 @@ function Maintenance(props) {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Typography variant="h5" color="primary">
+     <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
         Maintenance
       </Typography>
-      <br />
 
       {/* <Typography variant="overline">Upload your files</Typography> */}
       {/* Search Employee Section */}
@@ -52,32 +51,32 @@ function Maintenance(props) {
         <Typography variant="h6" color="text.primary">
           Search Employee
         </Typography>
-        <Divider />
+        <Divider sx={{ mt:1 }}/>
         <br />
       <FormControl sx={{ my: 1}} fullWidth>
           <Typography variant="overline">Employee number</Typography>
 
-          <TextField id="outlined-basic" variant="outlined" />
+          <TextField id="outlined-basic" size="small"  variant="outlined" />
           <Grid container spacing={2} sx={{ mt: 1 }}>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Stack>
                 <Typography variant="overline">First Name</Typography>
 
-                <TextField variant="outlined" hiddenLabel />
+                <TextField size="small" variant="outlined" hiddenLabel />
               </Stack>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Stack>
                 <Typography variant="overline">Middle Name</Typography>
 
-                <TextField id="outlined-basic" variant="outlined" />
+                <TextField id="outlined-basic" size="small"  variant="outlined" />
               </Stack>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Stack>
                 <Typography variant="overline">Last Name</Typography>
 
-                <TextField id="outlined-basic" variant="outlined" />
+                <TextField id="outlined-basic" size="small"  variant="outlined" />
               </Stack>
             </Grid>
           </Grid>
@@ -88,7 +87,9 @@ function Maintenance(props) {
           <Select
             value={siteName}
             onChange={handleSiteName}
+            size="small" 
             displayEmpty
+
             inputProps={{ "aria-label": "Without label" }}
           >
             <MenuItem value="">

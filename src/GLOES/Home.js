@@ -5,8 +5,7 @@ import Grid from "@mui/material/Grid";
 function Home(props) {
   return (
     <div>
-      <Typography variant="h5" >Hello, Chito Aldrin Velez!</Typography>
-      <br />
+     <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>Hello, Chito Aldrin Velez!</Typography>
       <Typography variant="body1">Welcome to your dashboard</Typography>
       
 

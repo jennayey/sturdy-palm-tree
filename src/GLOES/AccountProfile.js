@@ -63,14 +63,13 @@ const benMovementsRows = [
 function AccountProfile(props) {
   return (
     <div>
-      <Typography variant="h5" color="primary">
+      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
         Account Profile
       </Typography>
-      <br />
       {/* First table - Employee Movements */}
 
-      <Typography variant="overline">Employee Movements</Typography>
-      <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="subtitle2">Employee Movements</Typography>
+      <Paper variant="outlined" sx={{ p: 2 , mt:1}}>
         <TableContainer>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
@@ -104,8 +103,8 @@ function AccountProfile(props) {
 
       {/* Second table - Beneficiary (IES) Movements */}
       <br/>
-      <Typography  variant="overline">Beneficiary (IES) Movements</Typography>
-      <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography  variant="subtitle2">Beneficiary (IES) Movements</Typography>
+      <Paper variant="outlined" sx={{ p: 2, mt:1 }}>
         <TableContainer >
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>

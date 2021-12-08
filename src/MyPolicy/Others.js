@@ -50,10 +50,9 @@ const agentList = [
 function Others(props) {
   return (
     <Box>
-      <Typography variant="h4" sx={{ mb: 5 }}>
+      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
         Others{" "}
       </Typography>
-      <br />
       <Typography variant="h6">Policy Agents</Typography>
       <Typography variant="body1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -119,7 +118,7 @@ Post Date            </Typography>
       </Box>
 
       <Box sx={{ mt: 8 }}>
-      <Typography variant="h6" sx={{ mb: 2}}>Policy Agent History / Transfer of Business</Typography>
+      <Typography variant="subtitle2" sx={{ mb: 2}}>Policy Agent History / Transfer of Business</Typography>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>

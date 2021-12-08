@@ -25,29 +25,27 @@ function EmployeeInquiryUpload(props) {
 
   return (
     <div>
-      <Typography variant="h5" color="primary">
+     <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
         Employee Inquiry Upload
       </Typography>
-      <br />
 
-      <Typography variant="overline">Your profile</Typography>
+      <Typography variant="h6">Uploading</Typography>
+      <Divider sx={{ mt:1 }}/>
 
-      <Paper variant="outlined" sx={{ p: 2 }}>
-        <Stack
-          direction="column"
-          alignItems="flex-start"
-          justifyContent="flex-start"
-          spacing={1}
-        >
-          <Typography variant="caption">Upload Type</Typography>
+      <Box sx={{ mt:3 }}>
+        
 
-          <FormControl sx={{ my: 1, display: "inline", m: 1, minWidth: 120 }}>
+          <FormControl sx={{ my: 1,minWidth: 120 }}>
+          <Typography variant="overline">Upload Type</Typography>
+
             <Select
               value={uploadType}
               onChange={handleChange}
+              size="small"
               displayEmpty
               inputProps={{ "aria-label": "Without label" }}
             >
+
               <MenuItem value="">
                 <em>Select Upload Type</em>
               </MenuItem>
@@ -57,9 +55,8 @@ function EmployeeInquiryUpload(props) {
               <MenuItem value="Update Basic Info">Update Basic Info</MenuItem>
             </Select>
           </FormControl>
-        </Stack>
         <br />
-        <Typography variant="caption">Select File (*.csv)</Typography>
+        <Typography variant="overline">Select File (*.csv)</Typography>
 
         <Box
           sx={{
@@ -91,7 +88,7 @@ function EmployeeInquiryUpload(props) {
         <Typography variant="caption" color="text.hint">
           Accepted files are CSV
         </Typography>
-      </Paper>
+      </Box>
     </div>
   );
 }

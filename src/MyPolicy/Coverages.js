@@ -81,10 +81,9 @@ const policyList = [
 function Coverages(props) {
   return (
     <Box>
-      <Typography variant="h4" sx={{ mb: 5 }}>
+      <Typography variant="h4" sx={{ mb: 5 }}  color="primary">
         Coverages{" "}
       </Typography>
-      <br />
       <Typography variant="h6">Premium Breakdowns</Typography>
       <Typography variant="body1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

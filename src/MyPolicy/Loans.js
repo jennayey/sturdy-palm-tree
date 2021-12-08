@@ -37,10 +37,9 @@ import TableRow from "@mui/material/TableRow";
 function Loans(props) {
   return (
     <Box>
-      <Typography variant="h4" sx={{ mb: 5 }}>
+      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
         Loans{" "}
       </Typography>
-      <br />
       <Typography variant="h6">Policy Loans</Typography>
       <Typography variant="body1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
