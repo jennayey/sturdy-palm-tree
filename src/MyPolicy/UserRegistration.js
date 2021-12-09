@@ -1,42 +1,143 @@
 import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
+
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
+
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import { AccountCircle } from "@mui/icons-material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
+
 import Typography from "@mui/material/Typography";
-import { ThemeProvider } from "@mui/material/styles";
-import { createTheme } from "@mui/material/styles";
-import customtheme from "../theme/customtheme";
-import ListItemButton from "@mui/material/ListItemButton";
-import MainContent from "./../MainContent";
+
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Paper from "@mui/material/Paper";
+
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import cocolife from "../assets/cocolife-horizontal.png";
 
 function UserRegistration(props) {
-    return (
-      <div>
-        <Typography variant="h5" >User Registration</Typography>
-        <br />
-        <Typography variant="body1">Welcome to your dashboard</Typography>
-        
-  
-        <br />
+  const [suffix, setSuffix] = React.useState("");
+  const [siteName, setSiteName] = React.useState("");
+  const [dateThing, setDateThing] = React.useState("");
+
+  const handleSuffix = (event) => {
+    setSuffix(event.target.value);
+  };
+
+  const handleSiteName = (event) => {
+    setSiteName(event.target.value);
+  };
+
+  const handleDate = (event) => {
+    setDateThing(event.target.value);
+  };
+
+  return (
+    <Container maxWidth="sm" sx={{ p: 2 }}>
+      <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
+        <Stack spacing={4}>
+          <Box>
+            <img src={cocolife} style={{ height: "25px" }} />
+          </Box>
+          <Box>
+            <Typography variant="h4" color="primary"  sx={{ mb: 2}}>
+              User Registration
+            </Typography>
+
+            <Typography variant="body1" sx={{ mb: 3 }} >
+              Only <strong>Cocolife Policy payors</strong> are allowed to register. 
+            </Typography>
+
+            <Divider sx={{ mt: 1 }} />
+          </Box>
+
+          <FormControl sx={{ my: 1 }} fullWidth>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={12} md={6}>
+                <Stack>
+                  <Typography variant="overline">First Name</Typography>
+
+                  <TextField size="small" variant="outlined" hiddenLabel />
+                </Stack>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6}>
+                <Stack>
+                  <Typography variant="overline">Middle Name</Typography>
+
+                  <TextField
+                    id="outlined-basic"
+                    size="small"
+                    variant="outlined"
+                  />
+                </Stack>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6}>
+                <Stack>
+                  <Typography variant="overline">Last Name</Typography>
+
+                  <TextField
+                    id="outlined-basic"
+                    size="small"
+                    variant="outlined"
+                  />
+                </Stack>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6}>
+                <Stack>
+                  <Typography variant="overline">Suffix</Typography>
+
+                  <TextField size="small" variant="outlined" hiddenLabel />
+                </Stack>
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <Stack>
+                  <Typography variant="overline">Date of Birth</Typography>
+
+                  <TextField size="small" variant="outlined" hiddenLabel />
+                </Stack>
+              </Grid>
+
+              <Grid item xs={12}>
+                <Stack>
+                  <Typography variant="overline">Policy Number</Typography>
+
+                  <TextField size="small" variant="outlined" hiddenLabel />
+                </Stack>
+              </Grid>
+            </Grid>
+
+            <Stack
+              direction="row"
+              justifyContent="flex-end"
+              spacing={3}
+              sx={{ mt: 5 }}
+            > <Button
+            variant="text"
+            size="large"
+            href="/"
+          >
       
-      </div>
-    );
-  }
-  
-  export default UserRegistration;
-  
+            Cancel
+          </Button>
+              <Button
+                variant="contained"
+                size="large"
+                href="/registration-step2"
+              >
+          
+                Next
+              </Button>
+            </Stack>
+          </FormControl>
+        </Stack>
+      </Paper>
+    </Container>
+  );
+}
+
+export default UserRegistration;

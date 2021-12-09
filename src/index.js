@@ -14,6 +14,9 @@ import MyPolicyHome from "./MyPolicy/MyPolicyHome"
 
 import ForgotPassword from "./ForgotPassword"
 import ForgotPassword2 from "./ForgotPassword2"
+import UserRegistration from "./MyPolicy/UserRegistration" 
+import UserRegistration2 from "./MyPolicy/UserRegistration2" 
+
 let cTheme = createTheme(customtheme);
 
 ReactDOM.render(
@@ -27,6 +30,10 @@ ReactDOM.render(
           <Route path="mypolicy" element={<MyPolicyHome />}/>
           <Route path="forgot-password" element={<ForgotPassword />}/>
           <Route path="forgot-password-email" element={<ForgotPassword2 />}/>
+          <Route path="registration" element={<UserRegistration />}/>
+          <Route path="registration-step2" element={<UserRegistration2 />}/>
+
+
 
 
 

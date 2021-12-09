@@ -53,7 +53,6 @@ function Login() {
             >
               Login to GLOES{" "}
             </Button>
-<br/>
             <Button
               variant="contained"
               size="large"
@@ -62,10 +61,19 @@ function Login() {
             >
               Login to MyPolicy{" "}
             </Button>
+
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ mt: 3 }}
+              href="/registration"
+            >
+              Register
+            </Button>
           </FormControl>
           <Typography variant="caption">
             Forgot your{" "}
-            <Link href="#" sx={{ textDecoration: "none" }} color="primary">
+            <Link href="#" sx={{ textDecoration: "none" }} color="text.hint">
               username
             </Link>{" "}
             or{" "}
