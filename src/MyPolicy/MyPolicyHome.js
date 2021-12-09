@@ -31,6 +31,8 @@ import Coverages from "./Coverages";
 import Ledger from "./Ledger"
 import Others from "./Others";
 import Loans from "./Loans";
+import UpdateInternetAccount from "./UpdateInternetAccount"
+import History from "./History";
 import cocolife from "../assets/cocolife-horizontal.png";
 const drawerWidth = 240;
 
@@ -84,7 +86,7 @@ function MyPolicyHome(props) {
             <ListItemText primary="Loans" disableTypography="true" />
           </Typography>
         </ListItemButton>
-        <ListItemButton disabled>
+        <ListItemButton onClick={()=> setCurrentScreen(<History/>)}>
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
@@ -116,7 +118,15 @@ function MyPolicyHome(props) {
   
       </List>
       <Divider />
-      <List>
+      <List> 
+        <ListItemButton  onClick={()=> setCurrentScreen(<UpdateInternetAccount/>)}>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary="Internet Account" disableTypography="true" />
+          </Typography>
+        </ListItemButton>
         <ListItemButton disabled>
           <ListItemIcon>
             <InboxIcon />

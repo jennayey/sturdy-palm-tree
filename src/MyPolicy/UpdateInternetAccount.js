@@ -17,19 +17,18 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 
 import Link from "@mui/material/Link";
-
-import { borders } from "@mui/system";
-
-function UserProfile(props) {
+export default function UpdateInternetAccount() {
   return (
     <div>
       <Typography variant="h4" color="primary" sx={{ mb: 5 }}>
-        User Profile
+        My Internet Account{" "}
       </Typography>
       <Stack direction="row" justifyContent="space-between">
-        <Typography variant="h6">Personal Information</Typography>
-        <Button variant="text">Edit</Button>
-      </Stack>{" "}
+      <Typography variant="h6">Personal Information</Typography>
+      <Button variant="text">Edit</Button>
+
+      </Stack>
+
       <Divider sx={{ mt: 1 }} />
       <Grid container spacing={2} sx={{ mt: 1 }}>
         <Grid item xs={12} sm={4} md={4} lg={4}>
@@ -77,6 +76,38 @@ function UserProfile(props) {
             />
           </Stack>
         </Grid>
+       
+        <Grid item xs={12} sm={4} md={4} lg={4}>
+          <Stack>
+            <Typography color="text" variant="overline">
+              Email Address{" "}
+            </Typography>
+
+            <TextField
+              id="outlined-basic"
+              size="small"
+              variant="outlined"
+              hiddenLabel
+              value="benj@gmail.com"
+            />
+          </Stack>
+        </Grid>
+
+        <Grid item xs={12} sm={4} md={4} lg={4}>
+          <Stack>
+            <Typography color="text" variant="overline">
+            Mobile number{" "}
+            </Typography>
+
+            <TextField
+              id="outlined-basic"
+              size="small"
+              variant="outlined"
+              hiddenLabel
+              value="benj@gmail.com"
+            />
+          </Stack>
+        </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Stack>
             <Typography color="text" variant="overline">
@@ -89,6 +120,7 @@ function UserProfile(props) {
               variant="outlined"
               hiddenLabel
               value="23242733"
+              disabled
             />
           </Stack>
         </Grid>
@@ -101,8 +133,10 @@ function UserProfile(props) {
               Cancel
             </Button>
           </Stack>
-        </Grid> */}
-      </Grid>
+        </Grid>*/}
+      </Grid> 
+      
+
       <Typography
         variant="h6"
         sx={{ marginBottom: "10px", marginTop: "100px" }}
@@ -180,5 +214,3 @@ function UserProfile(props) {
     </div>
   );
 }
-
-export default UserProfile;
