@@ -1,5 +1,7 @@
 
 import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+
 function MainContent (props) {
     return (
 <Box
@@ -8,11 +10,13 @@ function MainContent (props) {
             height: "100%",
             flexGrow: 1,
             pt: {xs:5},
+            mt: 5,
             px: {sm: 2, lg:3},
             width: "100%",
-            marginTop:"50px" 
           }}
         >
+
+
          {props.screen}
         </Box>
 

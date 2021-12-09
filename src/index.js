@@ -11,6 +11,9 @@ import { createTheme } from "@mui/material/styles";
 import customtheme from "./theme/customtheme";
 
 import MyPolicyHome from "./MyPolicy/MyPolicyHome"
+
+import ForgotPassword from "./ForgotPassword"
+import ForgotPassword2 from "./ForgotPassword2"
 let cTheme = createTheme(customtheme);
 
 ReactDOM.render(
@@ -22,6 +25,10 @@ ReactDOM.render(
      
           <Route path="gloes" element={<App />}/>
           <Route path="mypolicy" element={<MyPolicyHome />}/>
+          <Route path="forgot-password" element={<ForgotPassword />}/>
+          <Route path="forgot-password-email" element={<ForgotPassword2 />}/>
+
+
 
 
 

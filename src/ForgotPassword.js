@@ -15,16 +15,25 @@ import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 
 import cocolife from "./assets/cocolife-horizontal.png";
-
-function Login() {
+export default function ForgotPassword() {
   return (
     <Container maxWidth="sm" sx={{ p: 2 }}>
       <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
         <Stack spacing={4}>
           <Box>
-            <img src={cocolife} style={{ height: "25px" }} />
+            <Typography variant="body">
+              <Link href="/" sx={{ textDecoration: "none" }}>
+                Go Back
+              </Link>
+            </Typography>{" "}
           </Box>
-          <Typography variant="h5">Welcome back!</Typography>
+          <Box>
+          <Typography variant="h5" sx={{mb:2}}>Reset your password</Typography>{" "}
+          <Typography variant="body">
+            Please enter your username to reset your password. We will be sending you instructions on how to reset your password
+          </Typography>
+          </Box>
+         
           <FormControl sx={{ my: 1, minWidth: 120 }} fullWidth>
             <Typography variant="overline">User ID</Typography>
 
@@ -34,50 +43,26 @@ function Login() {
               variant="outlined"
               value="Benjamin"
             />
-            <Typography variant="overline">Password</Typography>
-
-            <TextField
-              sx={{ marginTop: "10px" }}
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Benjamin"
-              type="password"
-            />
-            <Button
-              variant="contained"
-              size="large"
-              sx={{ mt: 3 }}
-              href="/gloes"
-            >
-              Login to GLOES{" "}
-            </Button>
-<br/>
-            <Button
-              variant="contained"
-              size="large"
-              sx={{ mt: 3 }}
-              href="/mypolicy"
-            >
-              Login to MyPolicy{" "}
-            </Button>
-          </FormControl>
-          <Typography variant="caption">
-            Forgot your{" "}
+            <Typography variant="subtitle2" sx={{mt:2}}>
+           
             <Link href="#" sx={{ textDecoration: "none" }} color="primary">
-              username
-            </Link>{" "}
-            or{" "}
-            <Link href="/forgot-password" sx={{ textDecoration: "none" }} color="primary">
-              password
-            </Link>
-            ?
+I don't know my username            </Link>{" "}
+        
           </Typography>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ mt: 5 }}
+              href="forgot-password-email"
+            >
+              Reset my password{" "}
+            </Button>
+          
+           
+          </FormControl>
+         
         </Stack>
       </Paper>
     </Container>
   );
 }
-
-export default Login;

@@ -50,7 +50,8 @@ function App(props) {
   const drawer = (
     <Box>
       <Toolbar />
-      <List sx={{ marginTop: `20px` }}>
+      
+      <List sx={{ mt: 5 }}>
         <ListItemButton onClick={() => setCurrentScreen(<Home />)}>
           <ListItemIcon>
             <InboxIcon />
@@ -102,7 +103,7 @@ function App(props) {
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
-          <Typography variant="body2" noWrap component="div">
+          <Typography variant="body2" component="div">
             <ListItemText
               primary="Employee Inquiry Upload"
               disableTypography="true"

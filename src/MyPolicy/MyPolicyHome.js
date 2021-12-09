@@ -48,7 +48,7 @@ function MyPolicyHome(props) {
     <div>
       <Toolbar />
 
-      <List sx={{ marginTop: `20px` }}>
+      <List sx={{ mt: 5}}>
         <ListItemButton onClick={()=> setCurrentScreen(<BasicInformation/>)}>
           <ListItemIcon>
             <InboxIcon />
