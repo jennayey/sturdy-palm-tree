@@ -45,14 +45,7 @@ function Login() {
               value="Benjamin"
               type="password"
             />
-            <Button
-              variant="contained"
-              size="large"
-              sx={{ mt: 3 }}
-              href="/gloes"
-            >
-              Login to GLOES{" "}
-            </Button>
+
             <Button
               variant="contained"
               size="large"
@@ -61,7 +54,14 @@ function Login() {
             >
               Login to MyPolicy{" "}
             </Button>
-
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ mt: 3 }}
+              href="/gloes"
+            >
+              Login to GLOES{" "}
+            </Button>
             <Button
               variant="contained"
               size="large"
@@ -77,7 +77,11 @@ function Login() {
               username
             </Link>{" "}
             or{" "}
-            <Link href="/forgot-password" sx={{ textDecoration: "none" }} color="primary">
+            <Link
+              href="/forgot-password"
+              sx={{ textDecoration: "none" }}
+              color="primary"
+            >
               password
             </Link>
             ?
