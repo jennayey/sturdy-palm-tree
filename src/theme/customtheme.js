@@ -15,7 +15,6 @@
 
 const customtheme = {
   palette: {
-    type: "light",
     primary: {
       main: "#005db9",
     },

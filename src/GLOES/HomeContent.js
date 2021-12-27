@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
-function Home(props) {
+function HomeContent(props) {
   return (
     <div>
      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>Hello, Chito Aldrin Velez!</Typography>
@@ -15,4 +15,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default HomeContent;
