@@ -67,51 +67,51 @@ function Others(props) {
 
         <Grid container spacing={2} sx={{ mt: 1 }}>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
               Agent Name
             </Typography>
             <Typography variant="body1">John Doe</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
               Unit Name
             </Typography>
             <Typography variant="body1">Unit 24277 - Insurance</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
               Unit Sales Director
             </Typography>
             <Typography variant="body1">Juan Dela Cruz</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
               Agency Name
             </Typography>
             <Typography variant="body1">Best Insurance Inc.</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
 Agency Sales Director            </Typography>
             <Typography variant="body1">Marshall Eriksen</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
 Supervising Area Name            </Typography>
             <Typography variant="body1">Peter Parker</Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
 Area Head            </Typography>
             <Typography variant="body1">Barney Stinson</Typography>
           </Grid><Divider/>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
 Effectivity Date            </Typography>
             <Typography variant="body1">December 21, 2015</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+            <Typography variant="overline" color="#bbb">
 Post Date            </Typography>
             <Typography variant="body1">December 21, 2025</Typography>
           </Grid>

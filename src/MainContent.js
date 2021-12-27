@@ -13,6 +13,12 @@ function MainContent (props) {
             marginTop:"50px" 
           }}
         >
+<<<<<<< Updated upstream
+=======
+          
+
+
+>>>>>>> Stashed changes
          {props.screen}
         </Box>
 

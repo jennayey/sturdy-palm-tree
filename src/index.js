@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Login from "./Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+<<<<<<< Updated upstream
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import customtheme from "./customtheme";
@@ -24,6 +25,8 @@ ReactDOM.render(
           <Route path="mypolicy" element={<MyPolicyHome />}/>
 
 
+=======
+>>>>>>> Stashed changes
 
         </Routes>
       </ThemeProvider>

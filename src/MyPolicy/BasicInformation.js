@@ -34,6 +34,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+
 function RegisteredPolicies(policyNumber, plan, policyStatus) {
   return { policyNumber, plan, policyStatus };
 }
@@ -61,8 +64,14 @@ function BasicInformation(props) {
       <Typography variant="h4" sx={{ mb: 5 }}>
         Basic Information
       </Typography>
+<<<<<<< Updated upstream
       <br />
       <Typography variant="h6">Add or Remove Policy</Typography>
+=======
+  
+      <Typography variant="h5">Add or Remove Policy</Typography>
+      <br/>
+>>>>>>> Stashed changes
       <Typography variant="body1">
         Your current policy registration is shown below. If you have more than
         one policy, you can add other policies by clicking the "Register this"

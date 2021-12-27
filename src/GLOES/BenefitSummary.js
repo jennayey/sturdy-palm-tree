@@ -11,19 +11,31 @@ function BenefitSummary(props) {
       <Paper variant="outlined" sx={{ p: 2 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={4} lg={2} xl={2}>
+<<<<<<< Updated upstream
             <Typography variant="caption">Policy Number</Typography>
+=======
+            <Typography variant="overline" color="#bbb">Policy Number</Typography>
+>>>>>>> Stashed changes
             <Typography variant="subtitle1">
               T-20-077
             </Typography>
           </Grid>
           <Grid item xs={12} md={12} lg={6} xl={4}>
+<<<<<<< Updated upstream
             <Typography variant="caption">Policy Holder</Typography>
+=======
+            <Typography variant="overline" color="#bbb">Policy Holder</Typography>
+>>>>>>> Stashed changes
             <Typography variant="subtitle1" >
               Samsung Electro-Mechanics Philippines Corporation
             </Typography>
           </Grid>
           <Grid item xs={12} md={12} lg={4} xl={4}>
+<<<<<<< Updated upstream
             <Typography variant="caption">Period Coverage</Typography>
+=======
+            <Typography variant="overline" color="#bbb">Period Coverage</Typography>
+>>>>>>> Stashed changes
             <Typography variant="subtitle1">
               07/14/2020 - 07/13/2021
             </Typography>

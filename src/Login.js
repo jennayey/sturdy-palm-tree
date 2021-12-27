@@ -65,7 +65,11 @@ function Login() {
           </FormControl>
           <Typography variant="caption">
             Forgot your{" "}
+<<<<<<< Updated upstream
             <Link href="#" sx={{ textDecoration: "none" }} color="primary">
+=======
+            <Link href="#" sx={{ textDecoration: "none" }} color="#bbb">
+>>>>>>> Stashed changes
               username
             </Link>{" "}
             or{" "}

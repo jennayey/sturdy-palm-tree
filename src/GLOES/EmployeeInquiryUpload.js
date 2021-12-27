@@ -88,7 +88,7 @@ function EmployeeInquiryUpload(props) {
             </Stack>
           </Stack>
         </Box>
-        <Typography variant="caption" color="text.hint">
+        <Typography variant="caption" color="#bbb">
           Accepted files are CSV
         </Typography>
       </Paper>
