@@ -18,77 +18,82 @@ import cocolife from "./assets/cocolife-horizontal.png";
 
 function Login() {
   return (
-    <Container maxWidth="sm" sx={{ p: 2 }}>
-      <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
-        <Stack spacing={4}>
-          <Box>
-            <img src={cocolife} style={{ height: "25px" }} />
-          </Box>
-          <Typography variant="h5">Welcome back!</Typography>
-          <FormControl sx={{ my: 1, minWidth: 120 }} fullWidth>
-            <Typography variant="overline">User ID</Typography>
+    <Box sx={{ backgroundColor: "background.default",  height:'100vh' }}>
+      <Container
+        maxWidth="sm"
+        sx={{ p: 2, backgroundColor: "background.default" }}
+      >
+        <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
+          <Stack spacing={4}>
+            <Box>
+              <img src={cocolife} style={{ height: "25px" }} />
+            </Box>
+            <Typography variant="h5">Welcome back!</Typography>
+            <FormControl sx={{ my: 1, minWidth: 120 }} fullWidth>
+              <Typography variant="overline">User ID</Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              value="Benjamin"
-            />
-            <Typography variant="overline">Password</Typography>
+              <TextField
+                id="outlined-basic"
+                size="small"
+                variant="outlined"
+                value="Benjamin"
+              />
+              <Typography variant="overline">Password</Typography>
 
-            <TextField
-              sx={{ marginTop: "10px" }}
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Benjamin"
-              type="password"
-            />
+              <TextField
+                sx={{ marginTop: "10px" }}
+                id="outlined-basic"
+                size="small"
+                variant="outlined"
+                hiddenLabel
+                value="Benjamin"
+                type="password"
+              />
 
-            <Button
-              variant="contained"
-              size="large"
-              sx={{ mt: 3 }}
-              href="/mypolicy"
-            >
-              Login to MyPolicy{" "}
-            </Button>
-            <Button
-              variant="contained"
-              size="large"
-              sx={{ mt: 3 }}
-              href="/gloes"
-            >
-              Login to GLOES{" "}
-            </Button>
-            <Button
-              variant="contained"
-              size="large"
-              sx={{ mt: 3 }}
-              href="/registration"
-            >
-              Register
-            </Button>
-          </FormControl>
-          <Typography variant="caption">
-            Forgot your{" "}
-            <Link href="#" sx={{ textDecoration: "none" }} color="text.hint">
-              username
-            </Link>{" "}
-            or{" "}
-            <Link
-              href="/forgot-password"
-              sx={{ textDecoration: "none" }}
-              color="primary"
-            >
-              password
-            </Link>
-            ?
-          </Typography>
-        </Stack>
-      </Paper>
-    </Container>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{ mt: 3 }}
+                href="/mypolicy"
+              >
+                Login to MyPolicy{" "}
+              </Button>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{ mt: 3 }}
+                href="/gloes"
+              >
+                Login to GLOES{" "}
+              </Button>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{ mt: 3 }}
+                href="/registration"
+              >
+                Register
+              </Button>
+            </FormControl>
+            <Typography variant="caption">
+              Forgot your{" "}
+              <Link href="#" sx={{ textDecoration: "none" }} color="text.hint">
+                username
+              </Link>{" "}
+              or{" "}
+              <Link
+                href="/forgot-password"
+                sx={{ textDecoration: "none" }}
+                color="primary"
+              >
+                password
+              </Link>
+              ?
+            </Typography>
+          </Stack>
+        </Paper>
+      </Container>
+    </Box>
   );
 }
 

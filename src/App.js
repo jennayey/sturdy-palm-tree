@@ -97,7 +97,7 @@ export default function App() {
                     background: {
                       // default: '#eff8fa',
                       // default: "rgba(248,250,253,1)",
-                      default: "#121212",
+                      default: "black",
                     },
                   }),
         },
