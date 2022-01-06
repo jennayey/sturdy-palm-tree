@@ -1,38 +1,19 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import { AccountCircle, InfoRounded } from "@mui/icons-material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { ThemeProvider } from "@mui/material/styles";
-import { createTheme } from "@mui/material/styles";
-import customtheme from "../theme/customtheme";
-import ListItemButton from "@mui/material/ListItemButton";
-import MainContent from "./../MainContent";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-
 import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+
+
+import DarkModeSwitch from "../components/DarkModeSwitch";
+
+
 
 function RegisteredPolicies(policyNumber, plan, policyStatus) {
   return { policyNumber, plan, policyStatus };
@@ -61,6 +42,7 @@ function BasicInformation(props) {
       <Typography variant="overline" color="primary">
         Basic Information
       </Typography>
+      <DarkModeSwitch />
       <Typography variant="h5">Add or Remove Policy</Typography>
       <br/>
       <Typography variant="body1">

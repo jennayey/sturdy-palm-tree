@@ -8,6 +8,17 @@ import { Provider } from "react-redux";
 
 // const theme = useTheme();
 // const colorMode = React.useContext(ColorModeContext);
+import { saveState } from './localStorage'
+
+import {configureStore} from '@reduxjs/toolkit'
+import { createStore } from 'redux'
+import themeReducer from './features/Theming/ThemeModeSlice'
+
+
+store.subscribe(()=>{
+  saveState(store.getState());
+  console.log ('saved state hehe ')
+})
 
 ReactDOM.render(
   <React.StrictMode>

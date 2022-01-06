@@ -1,36 +1,32 @@
 
-import * as React from "react";
-import PropTypes from "prop-types";
+import MenuIcon from "@mui/icons-material/Menu";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import { AccountCircle } from "@mui/icons-material";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "@mui/icons-material/Menu";
+import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import ListItemButton from "@mui/material/ListItemButton";
+import * as React from "react";
+import cocolife from "./../assets/cocolife-horizontal.png";
 import MainContent from "./../MainContent";
-
-import Home from "./HomeContent";
-import Enrollment from "./Enrollment";
-import BenefitSummary from "./BenefitSummary";
 import AccountProfile from "./AccountProfile";
+import BenefitSummary from "./BenefitSummary";
 import EmployeeInquiryUpload from "./EmployeeInquiryUpload";
-import Reports from "./Reports";
+import Enrollment from "./Enrollment";
+import Home from "./HomeContent";
 import Maintenance from "./Maintenance";
+import Reports from "./Reports";
 import UserProfile from "./UserProfile";
 
-import cocolife from "./../assets/cocolife-horizontal.png"
+
 const drawerWidth = 240;
 
 

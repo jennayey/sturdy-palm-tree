@@ -1,29 +1,22 @@
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-
-import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import FormControl from "@mui/material/FormControl";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-
 import Link from "@mui/material/Link";
-
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import cocolife from "./assets/cocolife-horizontal.png";
 
 function Login() {
   return (
-    <Box sx={{ backgroundColor: "background.default",  height:'100vh' }}>
+    <Box sx={{ height:'100vh', backgroundColor: 'background.default' }}>
       <Container
         maxWidth="sm"
-        sx={{ p: 2, backgroundColor: "background.default" }}
+        sx={{ p: 2 ,}}
       >
-        <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
+        <Paper variant="outlined" sx={{ py: 5, px: 4, }}>
           <Stack spacing={4}>
             <Box>
               <img src={cocolife} style={{ height: "25px" }} />
@@ -90,7 +83,7 @@ function Login() {
               </Link>
               ?
             </Typography>
-          </Stack>
+           </Stack>
         </Paper>
       </Container>
     </Box>
