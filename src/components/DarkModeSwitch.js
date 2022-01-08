@@ -5,20 +5,24 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { lightMode, darkMode } from "../features/Theming/ThemeModeSlice";
 import { Button } from "@mui/material";
 
+
 function DarkModeSwitch() {
-  let themeSTATE = useSelector((state) => state.theme.value);
+  console.log("DARKMODESWITCH.js | Before Use Selector");
+  const themeSTATE = useSelector((state) => state.theme.value);
+  console.log("DARKMODESWITCH.js | Called Use Selector");
+
   let dispatch = useDispatch();
   const toggleColorMode = () => {
     if (themeSTATE === "dark") {
-      dispatch(lightMode());
+      dispatch(lightMode())
       console.log("component test light activated");
     } else {
-      dispatch(darkMode());
+      dispatch(darkMode())
       console.log("component test dark activated");
     }
   };
   return (
-    
+    <div>
       <Button
         variant="contained"
         onClick={toggleColorMode}
@@ -26,6 +30,8 @@ function DarkModeSwitch() {
       >
         Dark Mode
       </Button>
+     </div>
+      
   );
 }
 export default DarkModeSwitch;

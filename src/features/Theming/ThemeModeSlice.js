@@ -1,19 +1,20 @@
-import {createSlice} from '@reduxjs/toolkit'
-import { loadState } from '../../localStorage'
+import { createSlice } from "@reduxjs/toolkit";
 export const themeModeSlice = createSlice({
-    name: 'themeMode',
-    initialState: {
-        value: 'dark',
+  name: "themeMode",
+  //this is the initial state
+  initialState: {
+    value: "dark",
+  },
+  //reducers: these are the functions for updating the state of dark mode / light mode
+  reducers: {
+    lightMode: (state) => {
+      state.value = "light";
     },
-    reducers: {
-        lightMode: (state) =>{
-        state.value = 'light'
-        },
-        darkMode: (state) => {
-            state.value = 'dark'
-        }
-    }
-})
+    darkMode: (state) => {
+      state.value = "dark";
+    },
+  },
+});
 
-export const {lightMode, darkMode} = themeModeSlice.actions
-export default themeModeSlice.reducer
+export const { lightMode, darkMode } = themeModeSlice.actions;
+export default themeModeSlice.reducer;

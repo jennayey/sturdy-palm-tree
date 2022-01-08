@@ -11,8 +11,6 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 
-import DarkModeSwitch from "../components/DarkModeSwitch";
-
 
 
 function RegisteredPolicies(policyNumber, plan, policyStatus) {
@@ -42,7 +40,6 @@ function BasicInformation(props) {
       <Typography variant="overline" color="primary">
         Basic Information
       </Typography>
-      <DarkModeSwitch />
       <Typography variant="h5">Add or Remove Policy</Typography>
       <br/>
       <Typography variant="body1">

@@ -15,6 +15,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import cocolife from "../assets/cocolife-horizontal.png";
+import cocolifeWhite from "../assets/cocolife-horizontal-white.png";
 import MainContent from "./../MainContent";
 import BasicInformation from "./BasicInformation";
 import Coverages from "./Coverages";
@@ -24,7 +25,7 @@ import Loans from "./Loans";
 import Others from "./Others";
 import UpdateInternetAccount from "./UpdateInternetAccount";
 
-
+import DarkModeSwitch from '../components/DarkModeSwitch'
 const drawerWidth = 240;
 
 // let cTheme = createTheme(customtheme);
@@ -38,12 +39,12 @@ function MyPolicyHome(props) {
   };
 
   const drawer = (
-    <div>
+    <Box>
       <Toolbar />
 
       <List sx={{ mt: 5}}>
         <ListItemButton onClick={()=> setCurrentScreen(<BasicInformation/>)}>
-          <ListItemIcon>
+          <ListItemIcon color="inherit">
             <InboxIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
@@ -53,7 +54,7 @@ function MyPolicyHome(props) {
 
         <ListItemButton onClick={()=> setCurrentScreen(<Coverages/>)}>
           <ListItemIcon>
-            <InboxIcon />
+            <InboxIcon color="inherit"/>
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Coverages" disableTypography="true" />
@@ -97,9 +98,9 @@ function MyPolicyHome(props) {
       </List>
       <Divider />
       <List>
-        <ListItemButton >
+        <ListItemButton color="primary">
           <ListItemIcon>
-            <InboxIcon />
+            <InboxIcon color="inherit"/>
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Pay Online" disableTypography="true" />
@@ -135,11 +136,12 @@ function MyPolicyHome(props) {
             <ListItemText primary="Log Out" disableTypography="true" />
           </Typography>
         </ListItemButton>
+        <DarkModeSwitch/>
 
   
       </List>
     
-    </div>
+    </Box>
   );
 
   const container =
@@ -155,15 +157,16 @@ function MyPolicyHome(props) {
 
             ml: { md: `${drawerWidth}px` },
             zIndex: 2000,
-            backgroundColor: "white",
+            color: 'primary.main',
+            // backgroundColor: "default.background",
             borderTop: "10px solid #005db9",
             boxShadow: 'none',
             borderBottom: '1px solid #ddd'
           }}
+          enableColorOnDark
         >
           <Toolbar sx={{ display: "flex", justifyContent: "flex-start" }}>
           <IconButton
-              color="primary"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
@@ -178,7 +181,7 @@ function MyPolicyHome(props) {
             alignItems="center"
           >
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <img src={cocolife} style={{ height: "20px" }} />
+              <img src={cocolifeWhite} style={{ height: "20px" }} />
             </Box>
             <Typography
               color="primary"

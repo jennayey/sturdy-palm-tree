@@ -1,81 +1,52 @@
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
 // import { ThemeProvider } from "@mui/material/styles";
-import { createTheme, ThemeProvider, useTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { darkMode, lightMode } from "./features/Theming/ThemeModeSlice";
 import ForgotPassword from "./ForgotPassword";
 import ForgotPassword2 from "./ForgotPassword2";
 import GLOESHome from "./GLOES/GLOESHome";
-import { loadState } from "./localStorage";
+import { saveState } from "./localStorage";
 import Login from "./Login";
 import MyPolicyHome from "./MyPolicy/MyPolicyHome";
 import UserRegistration from "./MyPolicy/UserRegistration";
 import UserRegistration2 from "./MyPolicy/UserRegistration2";
-import customtheme from "./theme/customtheme";
+import store from "./store";
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
-function Test() {
-  const theme = useTheme();
 
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        width: "100%",
-        alignItems: "center",
-        justifyContent: "center",
-        bgcolor: "background.default",
-        color: "text.primary",
-        borderRadius: 1,
-        p: 3,
-      }}
-    >
-      {theme.palette.mode} mode
-      {/* <IconButton
-        sx={{ ml: 1 }}
-        onClick={colorMode.toggleColorMode}
-        color="inherit"
-      >
-        <Brightness7Icon />
-      </IconButton> */}
-      <Login />
-    </Box>
-  );
-}
 export default function App() {
   const themeSTATE = useSelector((state) => state.theme.value);
-  const dispatch = useDispatch();
-  //  console.log("THIS IS THE THEME  " + themeSTATE);
-  const coloRMode = React.useContext(ColorModeContext);
-  let cTheme = createTheme(customtheme);
+  console.log("APP.JS | Called USE SELECTOR");
   const [mode, setMode] = React.useState(themeSTATE);
-
   const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        console.log("Curent Theme " + themeSTATE + " " + mode);
-
-        if (themeSTATE === "dark") {
-           dispatch(lightMode())
-          console.log("Udate theme he " + themeSTATE + " " + mode);
-        } else {
-         dispatch(darkMode())
-          console.log("Udate theme lol " + themeSTATE + " " + mode);
-        }
-      },
-    }),
-    [mode, themeSTATE]
+    () => {
+      console.log("USE MEMO | START SETTING STATE");
+        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+        console.log(" USE MEMO | DONE SETTING STATE");
+    
+    },
+    [themeSTATE],
   );
+  
+ 
+  console.log("1. ThemeSTATE: " + themeSTATE + " | Mode: " + mode);
+
+  // store.subscribe(() => {
+  //   console.log("subscribe is happening");
+  //   setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+  //   console.log("setting mode lol");
+  // });
+
+ 
+
+
   const theme = React.useMemo(
     () =>
       createTheme({
         palette: {
           mode,
-          ...(themeSTATE === "light"
+          ...(mode === "light"
             ? {
                 primary: {
                   main: "#005db9",
@@ -93,7 +64,7 @@ export default function App() {
                   default: "white",
                   paper: "#fff",
                 },
-                
+                divider: "rgba(0, 0, 0, 0.12)",
               }
             : {
                 primary: {
@@ -109,40 +80,31 @@ export default function App() {
                 background: {
                   // default: '#eff8fa',
                   // default: "rgba(248,250,253,1)",
-                  default: "black",
-                  paper: "black",
+                  default: "#222531",
+                  paper: "#222531",
                 },
-               
+                divider: "rgba(255, 255, 255, 0.12)",
               }),
         },
       }),
-    [mode, themeSTATE]
+    [mode]
   );
 
   return (
     <BrowserRouter>
-      <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          <IconButton
-            sx={{ ml: 1 }}
-           onClick={colorMode.toggleColorMode}
-            // onClick={() => dispatch(darkMode())}
-        //  onClick={() => dispatch(lightMode())}
+          <ColorModeContext.Provider value={colorMode}>
 
-            color="inherit"
-          >
-            <Brightness7Icon />
-          </IconButton>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="gloes" element={<GLOESHome />} />
-            <Route path="mypolicy" element={<MyPolicyHome />} />
-            <Route path="forgot-password" element={<ForgotPassword />} />
-            <Route path="forgot-password-email" element={<ForgotPassword2 />} />
-            <Route path="registration" element={<UserRegistration />} />
-            <Route path="registration-step2" element={<UserRegistration2 />} />
-          </Routes>
-        </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="gloes" element={<GLOESHome />} />
+          <Route path="mypolicy" element={<MyPolicyHome />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+          <Route path="forgot-password-email" element={<ForgotPassword2 />} />
+          <Route path="registration" element={<UserRegistration />} />
+          <Route path="registration-step2" element={<UserRegistration2 />} />
+        </Routes>
+      </ThemeProvider>
       </ColorModeContext.Provider>
     </BrowserRouter>
   );
