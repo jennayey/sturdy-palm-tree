@@ -68,16 +68,19 @@ export default function App() {
             : {
                 primary: {
                   main: "#005db9",
+                  light: "#53a8fc"
                 },
                 secondary: {
-                  main: "rgba(255, 255, 255, 0.7)",
+                  // main: "rgba(255, 255, 255, 0.7)",
+                  main: "#6eb7ff"
                 },
                 text: {
                   primary: "#fff",
-                  hint: "rgba(0,0,0,0.38)",
+                  hint: "rgba(255, 255, 255, 0.5)",
                   secondary: "rgba(255, 255, 255, 0.75)",//headings
                   disabled: "rgba(255, 255, 255, 0.5)",//disabled 
-                  subtitle2: "rgba(201, 211, 240, .5)"//for small heading guides
+                  subtitle2: "rgba(201, 211, 240, .5)",//for small heading guides
+                linkActive: "#6eb7ff"
                 },
                 background: {
                   // default: '#eff8fa',

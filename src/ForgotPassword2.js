@@ -12,12 +12,13 @@ import Typography from "@mui/material/Typography";
 
 export default function ForgotPassword2() {
     return (
+      <Box sx={{ height:'100vh', backgroundColor: 'background.default' }}>
         <Container maxWidth="sm" sx={{ p: 2 }}>
         <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
           <Stack spacing={4}>
             <Box>
               <Typography variant="body">
-                <Link href="/forgot-password" sx={{ textDecoration: "none" }}>
+                <Link href="/forgot-password"  color="text.linkActive" sx={{ textDecoration: "none" }}>
                   Go Back
                 </Link>
               </Typography>{" "}
@@ -66,5 +67,6 @@ export default function ForgotPassword2() {
           </Stack>
         </Paper>
       </Container>
+      </Box>
     )
 }

@@ -36,7 +36,7 @@ function Reports(props) {
 
   return (
     <div>
-     <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
+     <Typography variant="h4"  color="text.primary" sx={{ mb: 5 }}>
         Reports
       </Typography>
 
@@ -203,7 +203,7 @@ function Reports(props) {
             <Grid item xs={12} >
               <Divider sx={{my: 2 }} />
               <Stack direction="row" justifyContent="flex-end" spacing={3}>
-              <Button variant="text" size="large">Clear</Button>
+              <Button variant="text" size="large" color="secondary">Clear</Button>
               <Button variant="contained" size="large">Generate</Button>
 
               </Stack>

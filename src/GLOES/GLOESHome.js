@@ -26,7 +26,7 @@ import Maintenance from "./Maintenance";
 import Reports from "./Reports";
 import UserProfile from "./UserProfile";
 
-
+import DarkModeSwitch from './../components/DarkModeSwitch'
 const drawerWidth = 240;
 
 
@@ -170,6 +170,7 @@ export default function GLOESHome(props) {
             <ListItemText primary="Log Out" disableTypography="true" />
           </Typography>
         </ListItemButton>
+        <DarkModeSwitch/>
       </List>
       <Divider />
     </Box>
@@ -182,18 +183,19 @@ export default function GLOESHome(props) {
     <Box sx={{display: {xs: 'block', md:'flex'}}}>
     <CssBaseline />
     <AppBar
-      position="fixed"
-      sx={{
-        width: `100%`,
-
-        ml: { md: `${drawerWidth}px` },
-        zIndex: 2000,
-        backgroundColor: "white",
-        borderTop: "10px solid #005db9",
-        boxShadow: 'none',
-            borderBottom: '1px solid #ddd',
-      }}
-    >
+          position="fixed"
+          color= "default"
+           sx={{
+            width: `100%`,
+            ml: { md: `${drawerWidth}px` },
+            zIndex: 2000,
+             
+          //backgroundColor: "default.background",
+            borderTop: "10px solid #005db9",
+            boxShadow: 'none',
+          }}
+          enableColorOnDark
+        >
       <Toolbar sx={{ display: "flex", justifyContent: "flex-start" }}>
       <IconButton
           color="primary"
@@ -214,7 +216,7 @@ export default function GLOESHome(props) {
           <img src={cocolife} style={{ height: "20px" }} />
         </Box>
         <Typography
-          color="primary"
+          color="text.primary"
           variant="subtitle"
           noWrap
           component="div"

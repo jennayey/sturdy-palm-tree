@@ -77,7 +77,7 @@ function Login() {
               <Link
                 href="/forgot-password"
                 sx={{ textDecoration: "none" }}
-                color="primary"
+                color="text.linkActive"
               >
                 password
               </Link>

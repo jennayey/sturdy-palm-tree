@@ -22,7 +22,7 @@ function EmployeeInquiryUpload(props) {
 
   return (
     <div>
-     <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
+     <Typography variant="h4"  color="text.primary" sx={{ mb: 5 }}>
         Employee Inquiry Upload
       </Typography>
 
@@ -75,7 +75,7 @@ function EmployeeInquiryUpload(props) {
               <DeleteIcon />
               <Typography variant="h6">Drag and drop files here</Typography>
               <Typography variant="body1">or</Typography>
-              <Button variant="text">Browse files</Button>
+              <Button variant="text" color="secondary">Browse files</Button>
               {/* <Button variant="outlined" startIcon={<DeleteIcon />}>
                 Upload file
               </Button> */}

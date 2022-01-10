@@ -60,10 +60,10 @@ const benMovementsRows = [
     "20082186"
   ),
 ];
-function AccountProfile(props) {
+function AccountProfile() {
   return (
     <div>
-      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
+      <Typography variant="h4"  color="text.primary" sx={{ mb: 5 }}>
         Account Profile
       </Typography>
       {/* First table - Employee Movements */}

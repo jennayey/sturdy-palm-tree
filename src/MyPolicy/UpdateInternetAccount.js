@@ -19,7 +19,7 @@ export default function UpdateInternetAccount() {
       </Typography>
       <Stack direction="row" justifyContent="space-between">
       <Typography variant="h6">Personal Information</Typography>
-      <Button variant="text">Edit</Button>
+      <Button variant="text" color="secondary">Edit</Button>
 
       </Stack>
 
@@ -193,11 +193,11 @@ export default function UpdateInternetAccount() {
           <Box sx={{ mt: 2 }}>
             <Typography variant="caption">
               Forgot your{" "}
-              <Link href="#" sx={{ textDecoration: "none" }} color="primary">
+              <Link href="#" sx={{ textDecoration: "none" }} color="secondary">
                 username
               </Link>{" "}
               or{" "}
-              <Link href="#" sx={{ textDecoration: "none" }} color="primary">
+              <Link href="#" sx={{ textDecoration: "none" }} color="secondary">
                 password
               </Link>
               ?

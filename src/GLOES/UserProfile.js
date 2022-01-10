@@ -17,12 +17,12 @@ import Link from "@mui/material/Link";
 function UserProfile() {
   return (
     <div>
-      <Typography variant="h4" color="primary" sx={{ mb: 5 }}>
-        User Profil
+      <Typography variant="h4" color="text.primary" sx={{ mb: 5 }}>
+        User Profile
       </Typography>
       <Stack direction="row" justifyContent="space-between">
         <Typography variant="h6">Personal Information</Typography>
-        <Button variant="text">Edit</Button>
+        <Button variant="text" color="secondary">Edit</Button>
       </Stack>{" "}
       <Divider sx={{ mt: 1 }} />
       <Grid container spacing={2} sx={{ mt: 1 }}>
