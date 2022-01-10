@@ -1,38 +1,44 @@
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 function BenefitSummary(props) {
   return (
     <div>
-      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>Benefit Summary</Typography>
-      <Typography variant="subtitle2">General Information</Typography>
-      <Paper variant="outlined" sx={{ p: 2, mt:1 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={4} lg={2} xl={2}>
-            <Typography variant="overline" color="text.hint">Policy Number</Typography>
-            <Typography variant="subtitle1">
-              T-20-077
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={12} lg={6} xl={4}>
-            <Typography variant="overline" color="text.hint">Policy Holder</Typography>
-            <Typography variant="subtitle1" >
-              Samsung Electro-Mechanics Philippines Corporation
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={12} lg={4} xl={4}>
-            <Typography variant="overline" color="text.hint">Period Coverage</Typography>
-            <Typography variant="subtitle1">
-              07/14/2020 - 07/13/2021
-            </Typography>
-          </Grid>
+      <Typography variant="h4" color="text.primary" sx={{ mb: 5 }}>
+        Benefit Summary
+      </Typography>
+      <Typography variant="h6" sx={{ mb: 3 }}>
+        General Information
+      </Typography>
+      {/* <Paper variant="outlined" sx={{ p: 2, mt:1 }}> */}
+      <Grid container spacing={2} sx={{ mb: 3 }}>
+        <Grid item xs={12} md={4} lg={2} xl={2}>
+          <Typography variant="subtitle2" color="text.subtitle2">
+            Policy Number
+          </Typography>
+          <Typography variant="h6">T-20-077</Typography>
         </Grid>
-      </Paper>
+        <Grid item xs={12} md={12} lg={6} xl={4}>
+          <Typography variant="subtitle2" color="text.subtitle2">
+            Policy Holder
+          </Typography>
+          <Typography variant="h6">
+            Samsung Electro-Mechanics Philippines Corporation
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={12} lg={4} xl={4}>
+          <Typography variant="subtitle2" color="text.subtitle2">
+            Period Coverage
+          </Typography>
+          <Typography variant="h6">07/14/2020 - 07/13/2021</Typography>
+        </Grid>
+      </Grid>
+      {/* </Paper> */}
 
       <br />
       <Typography variant="subtitle2">Description of Benefits</Typography>
-      <Paper variant="outlined" sx={{ p: 2, mt:1 }}>
+      <Paper variant="outlined" sx={{ p: 2, mt: 1 }}>
         <Typography variant="body1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor

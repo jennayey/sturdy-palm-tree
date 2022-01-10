@@ -1,34 +1,28 @@
 import * as React from "react";
 
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+ 
 import Button from "@mui/material/Button";
 
-import DeleteIcon from "@mui/icons-material/Delete";
-import TextField from "@mui/material/TextField";
+ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 
 import Link from "@mui/material/Link";
 
-import { borders } from "@mui/system";
-
-function UserProfile(props) {
+ 
+function UserProfile() {
   return (
     <div>
-      <Typography variant="h4" color="primary" sx={{ mb: 5 }}>
+      <Typography variant="h4" color="text.primary" sx={{ mb: 5 }}>
         User Profile
       </Typography>
       <Stack direction="row" justifyContent="space-between">
         <Typography variant="h6">Personal Information</Typography>
-        <Button variant="text">Edit</Button>
+        <Button variant="text" color="secondary">Edit</Button>
       </Stack>{" "}
       <Divider sx={{ mt: 1 }} />
       <Grid container spacing={2} sx={{ mt: 1 }}>

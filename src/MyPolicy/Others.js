@@ -1,28 +1,8 @@
 import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
+
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import { AccountCircle, InfoRounded } from "@mui/icons-material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { ThemeProvider } from "@mui/material/styles";
-import { createTheme } from "@mui/material/styles";
-import customtheme from "../theme/customtheme";
-import ListItemButton from "@mui/material/ListItemButton";
-import MainContent from "./../MainContent";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -50,11 +30,11 @@ const agentList = [
 function Others(props) {
   return (
     <Box>
-      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
+      <Typography variant="h4"  color="text.primary" sx={{ mb: 5 }}>
         Others{" "}
       </Typography>
       <Typography variant="h6">Policy Agents</Typography>
-      <Typography variant="body1">
+      <Typography variant="body1" color="text.secondary">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -66,53 +46,54 @@ function Others(props) {
 
         <Grid container spacing={2} sx={{ mt: 1 }}>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
+
               Agent Name
             </Typography>
-            <Typography variant="body1">John Doe</Typography>
+            <Typography variant="h6" color="text.primary">John Doe</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
               Unit Name
             </Typography>
-            <Typography variant="body1">Unit 24277 - Insurance</Typography>
+            <Typography variant="h6" color="text.primary">Unit 24277 - Insurance</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
               Unit Sales Director
             </Typography>
-            <Typography variant="body1">Juan Dela Cruz</Typography>
+            <Typography variant="h6" color="text.primary">Juan Dela Cruz</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
               Agency Name
             </Typography>
-            <Typography variant="body1">Best Insurance Inc.</Typography>
+            <Typography variant="h6" color="text.primary">Best Insurance Inc.</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
 Agency Sales Director            </Typography>
-            <Typography variant="body1">Marshall Eriksen</Typography>
+<Typography variant="h6" color="text.primary">Marshall Eriksen</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
 Supervising Area Name            </Typography>
-            <Typography variant="body1">Peter Parker</Typography>
+<Typography variant="h6" color="text.primary">Peter Parker</Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
 Area Head            </Typography>
-            <Typography variant="body1">Barney Stinson</Typography>
+<Typography variant="h6" color="text.primary">Barney Stinson</Typography>
           </Grid><Divider/>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
 Effectivity Date            </Typography>
-            <Typography variant="body1">December 21, 2015</Typography>
+<Typography variant="h6" color="text.primary">December 21, 2015</Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Typography variant="subtitle2" color="text.subtitle2">
 Post Date            </Typography>
-            <Typography variant="body1">December 21, 2025</Typography>
+            <Typography variant="h6" color="text.primary">December 21, 2025</Typography>
           </Grid>
         </Grid>
       </Box>

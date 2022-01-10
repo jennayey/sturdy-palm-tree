@@ -1,38 +1,17 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import { AccountCircle, InfoRounded } from "@mui/icons-material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { ThemeProvider } from "@mui/material/styles";
-import { createTheme } from "@mui/material/styles";
-import customtheme from "../theme/customtheme";
-import ListItemButton from "@mui/material/ListItemButton";
-import MainContent from "./../MainContent";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-
 import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+
+
+
 
 function RegisteredPolicies(policyNumber, plan, policyStatus) {
   return { policyNumber, plan, policyStatus };
@@ -58,12 +37,11 @@ const registeredList = [
 function BasicInformation(props) {
   return (
     <Box sx={{ width: '100%' }}>
-      <Typography variant="overline" color="primary">
+      <Typography variant="h4" sx={{mb: 5}} color="text.primary">
         Basic Information
       </Typography>
-      <Typography variant="h5">Add or Remove Policy</Typography>
-      <br/>
-      <Typography variant="body1">
+      <Typography variant="h6" color="text.primary">Add or Remove Policy</Typography>
+      <Typography variant="body1" color="text.secondary">
         Your current policy registration is shown below. If you have more than
         one policy, you can add other policies by clicking the "Register this"
         link under the My Other Policies section.
@@ -128,7 +106,7 @@ function BasicInformation(props) {
                     </TableCell>
                     <TableCell align="left">{row.plan}</TableCell>
                     <TableCell align="left">{row.policyStatus}</TableCell>
-                    <TableCell align="center"><Button variant="contained">Register This</Button></TableCell>
+                    <TableCell align="center"><Button variant="contained" color="primary">Register This</Button></TableCell>
                    
                   </TableRow>
                 ))}

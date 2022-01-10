@@ -1,12 +1,10 @@
 import * as React from "react";
 
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
@@ -38,7 +36,7 @@ function Reports(props) {
 
   return (
     <div>
-     <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
+     <Typography variant="h4"  color="text.primary" sx={{ mb: 5 }}>
         Reports
       </Typography>
 
@@ -205,7 +203,7 @@ function Reports(props) {
             <Grid item xs={12} >
               <Divider sx={{my: 2 }} />
               <Stack direction="row" justifyContent="flex-end" spacing={3}>
-              <Button variant="text" size="large">Clear</Button>
+              <Button variant="text" size="large" color="secondary">Clear</Button>
               <Button variant="contained" size="large">Generate</Button>
 
               </Stack>

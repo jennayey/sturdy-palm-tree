@@ -1,19 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import { Provider } from "react-redux";
 import App from "./App";
+import "./index.css";
+import { saveState } from "./localStorage";
 import reportWebVitals from "./reportWebVitals";
+import store from "./store";
 
-
-
-// const theme = useTheme();
-// const colorMode = React.useContext(ColorModeContext);
-
-
+//Subscribe()
+//Saves the state (from store.js) automatically(Using Subscribe()) when value is updated. 
+//Stores data in local storage in browser using saveState() in localStorage.js
+store.subscribe(() => {
+  saveState(store.getState());
+  console.log("saved state hehe");
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

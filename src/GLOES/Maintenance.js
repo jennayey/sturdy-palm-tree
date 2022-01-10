@@ -15,7 +15,6 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
@@ -41,7 +40,7 @@ function Maintenance(props) {
 
   return (
     <Box sx={{ width: '100%' }}>
-     <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
+     <Typography variant="h4"  color="text.primary" sx={{ mb: 5 }}>
         Maintenance
       </Typography>
 
@@ -109,7 +108,7 @@ function Maintenance(props) {
             spacing={3}
             sx={{ mt: 2 }}
           >
-            <Button variant="text" size="large">
+            <Button variant="text" size="large" color="secondary">
               Clear
             </Button>
             <Button variant="contained" size="large">

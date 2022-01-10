@@ -3,7 +3,6 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 
 import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
 
 import Typography from "@mui/material/Typography";
 
@@ -14,10 +13,8 @@ import Paper from "@mui/material/Paper";
 
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
+
 import cocolife from "../assets/cocolife-horizontal.png";
 
 function UserRegistration(props) {

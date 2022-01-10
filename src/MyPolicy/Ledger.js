@@ -1,31 +1,11 @@
 import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
+
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import { AccountCircle, InfoRounded } from "@mui/icons-material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
+
 import Typography from "@mui/material/Typography";
-import { ThemeProvider } from "@mui/material/styles";
-import { createTheme } from "@mui/material/styles";
-import customtheme from "../theme/customtheme";
-import ListItemButton from "@mui/material/ListItemButton";
-import MainContent from "./../MainContent";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+
 
 import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -49,11 +29,11 @@ const premiumPaymentList = [
 function Ledger(props) {
   return (
     <Box>
-      <Typography variant="h4"  color="primary" sx={{ mb: 5 }}>
+      <Typography variant="h4"  color="text.primary" sx={{ mb: 5 }}>
         Ledger{" "}
       </Typography>
       <Typography variant="h6">Premium Payments</Typography>
-      <Typography variant="body1">
+      <Typography variant="body1"  color="text.secondary">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
