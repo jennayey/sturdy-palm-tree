@@ -23,6 +23,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 
 export default function UserRegistration2() {
   return (
+    <Box sx={{ height:'100vh', backgroundColor: 'background.default' }} >
+
     <Container maxWidth="sm" sx={{ p: 2 }}>
       <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
         <Stack spacing={4}>
@@ -30,11 +32,11 @@ export default function UserRegistration2() {
             <img src={cocolife} style={{ height: "25px" }} />
           </Box>
           <Box>
-          <Typography variant="h4" color="primary"  sx={{ mb: 2}}>
+          <Typography variant="h4" color="text.primary"  sx={{ mb: 2}}>
               User Registration
             </Typography>
 
-            <Typography variant="body1" sx={{ mb: 3 }} >
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }} >
               Only <strong>Cocolife Policy payors</strong> are allowed to register. 
             </Typography>
             <Divider sx={{ mt: 1 }} />
@@ -63,7 +65,7 @@ export default function UserRegistration2() {
               <TextField size="small" variant="outlined" type="password" hiddenLabel />
             </Stack>
 
-              <FormControlLabel sx={{mt:2}} control={<Checkbox />} label={<Typography>By registering you agree to our <Link sx={{textDecoration: 'none'}}>Terms and Conditions</Link></Typography>} />
+              <FormControlLabel sx={{mt:2}} control={<Checkbox />} label={<Typography>By registering you agree to our <Link sx={{textDecoration: 'none'}} color="text.linkActive">Terms and Conditions</Link></Typography>} />
 
             <Stack
               direction="row"
@@ -75,7 +77,7 @@ export default function UserRegistration2() {
                 <Link
                   href="/registration"
                   sx={{ textDecoration: "none" }}
-                  color="primary"
+                  color="text.linkActive"
                 >
                   Back{" "}
                 </Link>
@@ -89,5 +91,6 @@ export default function UserRegistration2() {
         </Stack>
       </Paper>
     </Container>
+    </Box>
   );
 }
