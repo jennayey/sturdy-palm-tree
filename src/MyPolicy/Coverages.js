@@ -12,6 +12,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { Divider } from "@mui/material";
 
 function Policies(
   plan,
@@ -60,18 +61,18 @@ const policyList = [
 function Coverages(props) {
   return (
     <Box>
-      <Typography variant="h4" sx={{ mb: 5 }}  color="primary">
+      <Typography variant="h4" sx={{mb: 2}} color="text.primary">
         Coverages{" "}
       </Typography>
-      <Typography variant="h6">Premium Breakdowns</Typography>
-      <Typography variant="body1">
+      <Typography variant="body1" color="text.secondary" sx={{mb: 5}}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
       </Typography>
-
-      <Box sx={{ mt: 5 }}>
+      <Typography variant="h6">Premium Breakdowns</Typography>
+    
+      <Box sx={{ mt: 3}}>
         {/* <Typography variant="overline">Policies</Typography> */}
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">

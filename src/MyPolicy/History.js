@@ -54,11 +54,11 @@ export default function History() {
   ];
   return (
     <Box>
-      <Typography variant="h4" sx={{ mb: 5 }} color="primary">
+      <Typography variant="h4" sx={{ mb: 5 }} color="text.primary">
         History{" "}
       </Typography>
       <Typography variant="h6">Auto-Charge Arrangement Details</Typography>
-      <Typography variant="body1">
+      <Typography variant="body1"  color="text.secondary">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -66,39 +66,40 @@ export default function History() {
       </Typography>
       <Box>
         <Grid container spacing={2} sx={{ mt: 1 }}>
-          <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
+            <Typography variant="subtitle2" color="text.subtitle2">
               Account Number{" "}
             </Typography>
-            <Typography variant="body1">******14442</Typography>
+            <Typography variant="h6">******14442</Typography>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Grid item xs={12} sm={6} md={4} lg={3}  xl={2}>
+            <Typography variant="subtitle2" color="text.subtitle2">
 Recurring Type            </Typography>
-            <Typography variant="body1">Banco De Oro (ADA)</Typography>
+            <Typography variant="h6">Banco De Oro (ADA)</Typography>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
-Status            </Typography>
-            <Typography variant="body1">Inactive</Typography>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Grid item xs={12} sm={6} md={4} lg={2}  xl={2}>
+            <Typography variant="subtitle2" color="text.subtitle2">
              Effective Date
             </Typography>
-            <Typography variant="body1">09-24-2017</Typography>
+            <Typography variant="h6">09-24-2017</Typography>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="overline" color="text.hint">
+          <Grid item xs={12} sm={6} md={4} lg={2}  xl={2}>
+            <Typography variant="subtitle2" color="text.subtitle2">
               Expiry Date
             </Typography>
-            <Typography variant="body1">10-24-2021</Typography>
+            <Typography variant="h6">10-24-2021</Typography>
           </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={2}  xl={2}>
+            <Typography variant="subtitle2" color="text.subtitle2">
+Status            </Typography>
+            <Typography variant="h6">Inactive</Typography>
+          </Grid>
+         
          
         </Grid>
       </Box>
       <Box sx={{ mt: 5 }}>
-      <Typography variant="h6">Transaction History</Typography>
+      <Typography variant="subtitle2">Transaction History</Typography>
         <TableContainer component={Paper}  sx={{ mt: 2 }}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>

@@ -14,7 +14,7 @@ import Link from "@mui/material/Link";
 export default function UpdateInternetAccount() {
   return (
     <div>
-      <Typography variant="h4" color="primary" sx={{ mb: 5 }}>
+      <Typography variant="h4" color="text.primary" sx={{ mb: 5 }}>
         My Internet Account{" "}
       </Typography>
       <Stack direction="row" justifyContent="space-between">
@@ -27,7 +27,7 @@ export default function UpdateInternetAccount() {
       <Grid container spacing={2} sx={{ mt: 1 }}>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Stack>
-            <Typography color="text" variant="overline">
+            <Typography color="text.primary" variant="overline">
               First Name
             </Typography>
 

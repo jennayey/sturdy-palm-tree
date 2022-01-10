@@ -37,12 +37,11 @@ const registeredList = [
 function BasicInformation(props) {
   return (
     <Box sx={{ width: '100%' }}>
-      <Typography variant="overline" color="primary">
+      <Typography variant="h4" sx={{mb: 5}} color="text.primary">
         Basic Information
       </Typography>
-      <Typography variant="h5">Add or Remove Policy</Typography>
-      <br/>
-      <Typography variant="body1">
+      <Typography variant="h6" color="text.primary">Add or Remove Policy</Typography>
+      <Typography variant="body1" color="text.secondary">
         Your current policy registration is shown below. If you have more than
         one policy, you can add other policies by clicking the "Register this"
         link under the My Other Policies section.
@@ -107,7 +106,7 @@ function BasicInformation(props) {
                     </TableCell>
                     <TableCell align="left">{row.plan}</TableCell>
                     <TableCell align="left">{row.policyStatus}</TableCell>
-                    <TableCell align="center"><Button variant="contained">Register This</Button></TableCell>
+                    <TableCell align="center"><Button variant="contained" color="primary">Register This</Button></TableCell>
                    
                   </TableRow>
                 ))}

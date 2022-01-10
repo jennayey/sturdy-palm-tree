@@ -47,14 +47,17 @@ export default function App() {
                   main: "#00af43",
                 },
                 text: {
-                  primary: "rgba(43,39,39,0.91)",
-                  hint: "rgba(0,0,0,0.38)",
+                  primary: "rgba(13, 18, 38,1)",//headings
+                  hint: "rgba(0,0,0,0.38)", //hints
+                  secondary: "rgba(13, 18, 38, 0.75)",//headings
+                  disabled: "rgba(255, 255, 255, 0.5)",//disabled 
+                  subtitle2: "rgba(76, 88, 125, .8)"//for small heading guides
                 },
                 background: {
                   // default: '#eff8fa',
                   // default: "rgba(248,250,253,1)",
                   default: "white",
-                  paper: "#fff",
+                  paper: "rgba(228, 229, 235, 0.2)",
                   appbar: "#fff",
                 },
                 header: {
@@ -64,7 +67,7 @@ export default function App() {
               }
             : {
                 primary: {
-                  main: "#fff",
+                  main: "#005db9",
                 },
                 secondary: {
                   main: "rgba(255, 255, 255, 0.7)",
@@ -72,20 +75,20 @@ export default function App() {
                 text: {
                   primary: "#fff",
                   hint: "rgba(0,0,0,0.38)",
+                  secondary: "rgba(255, 255, 255, 0.75)",//headings
+                  disabled: "rgba(255, 255, 255, 0.5)",//disabled 
+                  subtitle2: "rgba(201, 211, 240, .5)"//for small heading guides
                 },
                 background: {
                   // default: '#eff8fa',
                   // default: "rgba(248,250,253,1)",
-                  default: "#222531",
+                  default: "#171924",
                   paper: "#222531",
                 },
                 header: {
                   color: "#0f111c",
                 },
-                divider: "rgba(255, 255, 255, 0.12)",
-                neutral: {
-                  main: "#00b02f",
-                },
+                divider: "rgba(50, 54, 71,0.90)",
               }),
         },
         components: {
@@ -96,6 +99,7 @@ export default function App() {
                   styleOverrides: {
                     colorDefault: {
                       backgroundColor: "#fff",
+                      borderBottom: "1px solid #ddd",
                     },
                   },
                 },
@@ -104,12 +108,64 @@ export default function App() {
                 MuiAppBar: {
                   styleOverrides: {
                     colorDefault: {
-                      backgroundColor: "#000",
+                      backgroundImage: "none",
+                      backgroundColor: "#181a26",
+                      borderBottom: "1px solid rgba(50, 54, 71 ,0.90)",
                     },
                   },
                 },
               }),
         },
+        typography: {
+          fontFamily: ["GothamBlack", "GothamMedium", "GothamRegular"],
+          h1: {
+            fontFamily: "GothamRegular",
+          },
+          h2: {
+            fontFamily: "GothamRegular",
+          },
+          h3: {
+            fontFamily: "GothamRegular",
+          },
+          h4: {
+            fontFamily: "GothamMedium",
+          },
+          h5: {
+            fontFamily: "GothamMedium",
+          },
+      
+          h6: {
+            fontFamily: "GothamMedium",
+            fontSize: "1.1rem"
+          },
+      
+          body1: {
+            fontFamily: "GothamRegular",
+            fontSize: "16px",
+          },
+          body2: {
+            fontFamily: "GothamRegular",
+            fontSize: "14px",
+          },
+          span: {
+            fontFamily: "GothamRegular",
+          },
+          overline: {
+            fontFamily: "GothamMedium",
+          },
+          caption: {
+            fontFamily: "GothamRegular",
+          },
+          subtitle1: {
+            fontFamily: "GothamRegular",
+          },
+          subtitle2: {
+            fontFamily: "GothamMedium",
+          },
+          button: {
+            fontFamily: "GothamMedium",
+          },
+        }
       }),
     [mode]
   );
