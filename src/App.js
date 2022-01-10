@@ -19,17 +19,12 @@ export default function App() {
   const themeSTATE = useSelector((state) => state.theme.value);
   console.log("APP.JS | Called USE SELECTOR");
   const [mode, setMode] = React.useState(themeSTATE);
-  const colorMode = React.useMemo(
-    () => {
-      console.log("USE MEMO | START SETTING STATE");
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-        console.log(" USE MEMO | DONE SETTING STATE");
-    
-    },
-    [themeSTATE],
-  );
-  
- 
+  const colorMode = React.useMemo(() => {
+    console.log("USE MEMO | START SETTING STATE");
+    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+    console.log(" USE MEMO | DONE SETTING STATE");
+  }, [themeSTATE]);
+
   console.log("1. ThemeSTATE: " + themeSTATE + " | Mode: " + mode);
 
   // store.subscribe(() => {
@@ -37,9 +32,6 @@ export default function App() {
   //   setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   //   console.log("setting mode lol");
   // });
-
- 
-
 
   const theme = React.useMemo(
     () =>
@@ -63,6 +55,10 @@ export default function App() {
                   // default: "rgba(248,250,253,1)",
                   default: "white",
                   paper: "#fff",
+                  appbar: "#fff",
+                },
+                header: {
+                  color: "#fff",
                 },
                 divider: "rgba(0, 0, 0, 0.12)",
               }
@@ -83,7 +79,35 @@ export default function App() {
                   default: "#222531",
                   paper: "#222531",
                 },
+                header: {
+                  color: "#0f111c",
+                },
                 divider: "rgba(255, 255, 255, 0.12)",
+                neutral: {
+                  main: "#00b02f",
+                },
+              }),
+        },
+        components: {
+          mode,
+          ...(mode === "light"
+            ? {
+                MuiAppBar: {
+                  styleOverrides: {
+                    colorDefault: {
+                      backgroundColor: "#fff",
+                    },
+                  },
+                },
+              }
+            : {
+                MuiAppBar: {
+                  styleOverrides: {
+                    colorDefault: {
+                      backgroundColor: "#000",
+                    },
+                  },
+                },
               }),
         },
       }),
@@ -92,19 +116,18 @@ export default function App() {
 
   return (
     <BrowserRouter>
-          <ColorModeContext.Provider value={colorMode}>
-
-      <ThemeProvider theme={theme}>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="gloes" element={<GLOESHome />} />
-          <Route path="mypolicy" element={<MyPolicyHome />} />
-          <Route path="forgot-password" element={<ForgotPassword />} />
-          <Route path="forgot-password-email" element={<ForgotPassword2 />} />
-          <Route path="registration" element={<UserRegistration />} />
-          <Route path="registration-step2" element={<UserRegistration2 />} />
-        </Routes>
-      </ThemeProvider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="gloes" element={<GLOESHome />} />
+            <Route path="mypolicy" element={<MyPolicyHome />} />
+            <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route path="forgot-password-email" element={<ForgotPassword2 />} />
+            <Route path="registration" element={<UserRegistration />} />
+            <Route path="registration-step2" element={<UserRegistration2 />} />
+          </Routes>
+        </ThemeProvider>
       </ColorModeContext.Provider>
     </BrowserRouter>
   );

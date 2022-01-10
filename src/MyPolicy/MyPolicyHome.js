@@ -152,13 +152,13 @@ function MyPolicyHome(props) {
         <CssBaseline />
         <AppBar
           position="fixed"
-          sx={{
+          color="default"
+           sx={{
             width: `100%`,
-
             ml: { md: `${drawerWidth}px` },
             zIndex: 2000,
-            color: 'primary.main',
-            // backgroundColor: "default.background",
+             
+          //backgroundColor: "default.background",
             borderTop: "10px solid #005db9",
             boxShadow: 'none',
             borderBottom: '1px solid #ddd'
@@ -184,7 +184,7 @@ function MyPolicyHome(props) {
               <img src={cocolifeWhite} style={{ height: "20px" }} />
             </Box>
             <Typography
-              color="primary"
+              color="neutral.main"
               variant="subtitle"
               noWrap
               component="div"
