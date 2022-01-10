@@ -16,6 +16,7 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 
 import cocolife from "../assets/cocolife-horizontal.png";
+import Link from "@mui/material/Link";
 
 function UserRegistration(props) {
   const [suffix, setSuffix] = React.useState("");
@@ -35,105 +36,110 @@ function UserRegistration(props) {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ p: 2 }}>
-      <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
-        <Stack spacing={4}>
-          <Box>
-            <img src={cocolife} style={{ height: "25px" }} />
-          </Box>
-          <Box>
-            <Typography variant="h4" color="primary"  sx={{ mb: 2}}>
-              User Registration
-            </Typography>
+    <Box sx={{ height: "100vh", backgroundColor: "background.default" }}>
+      <Container maxWidth="sm" sx={{ p: 2 }}>
+        <Paper variant="outlined" sx={{ py: 5, px: 4 }}>
+          <Stack spacing={4}>
+            <Box>
+              <img src={cocolife} style={{ height: "25px" }} />
+            </Box>
+            <Box>
+              <Typography variant="h4" color="text.primary" sx={{ mb: 2 }}>
+                User Registration
+              </Typography>
 
-            <Typography variant="body1" sx={{ mb: 3 }} >
-              Only <strong>Cocolife Policy payors</strong> are allowed to register. 
-            </Typography>
+              <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+                Only <strong>Cocolife Policy payors</strong> are allowed to
+                register.
+              </Typography>
 
-            <Divider sx={{ mt: 1 }} />
-          </Box>
+              <Divider sx={{ mt: 1 }} />
+            </Box>
 
-          <FormControl sx={{ my: 1 }} fullWidth>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={12} md={6}>
-                <Stack>
-                  <Typography variant="overline">First Name</Typography>
+            <FormControl sx={{ my: 1 }} fullWidth>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={12} md={6}>
+                  <Stack>
+                    <Typography variant="overline">First Name</Typography>
 
-                  <TextField size="small" variant="outlined" hiddenLabel />
-                </Stack>
+                    <TextField size="small" variant="outlined" hiddenLabel />
+                  </Stack>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6}>
+                  <Stack>
+                    <Typography variant="overline">Middle Name</Typography>
+
+                    <TextField
+                      id="outlined-basic"
+                      size="small"
+                      variant="outlined"
+                    />
+                  </Stack>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6}>
+                  <Stack>
+                    <Typography variant="overline">Last Name</Typography>
+
+                    <TextField
+                      id="outlined-basic"
+                      size="small"
+                      variant="outlined"
+                    />
+                  </Stack>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6}>
+                  <Stack>
+                    <Typography variant="overline">Suffix</Typography>
+
+                    <TextField size="small" variant="outlined" hiddenLabel />
+                  </Stack>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <Stack>
+                    <Typography variant="overline">Date of Birth</Typography>
+
+                    <TextField size="small" variant="outlined" hiddenLabel />
+                  </Stack>
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Stack>
+                    <Typography variant="overline">Policy Number</Typography>
+
+                    <TextField size="small" variant="outlined" hiddenLabel />
+                  </Stack>
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={12} md={6}>
-                <Stack>
-                  <Typography variant="overline">Middle Name</Typography>
 
-                  <TextField
-                    id="outlined-basic"
-                    size="small"
-                    variant="outlined"
-                  />
-                </Stack>
-              </Grid>
-              <Grid item xs={12} sm={12} md={6}>
-                <Stack>
-                  <Typography variant="overline">Last Name</Typography>
-
-                  <TextField
-                    id="outlined-basic"
-                    size="small"
-                    variant="outlined"
-                  />
-                </Stack>
-              </Grid>
-              <Grid item xs={12} sm={12} md={6}>
-                <Stack>
-                  <Typography variant="overline">Suffix</Typography>
-
-                  <TextField size="small" variant="outlined" hiddenLabel />
-                </Stack>
-              </Grid>
-              <Grid item xs={12} sm={12}>
-                <Stack>
-                  <Typography variant="overline">Date of Birth</Typography>
-
-                  <TextField size="small" variant="outlined" hiddenLabel />
-                </Stack>
-              </Grid>
-
-              <Grid item xs={12}>
-                <Stack>
-                  <Typography variant="overline">Policy Number</Typography>
-
-                  <TextField size="small" variant="outlined" hiddenLabel />
-                </Stack>
-              </Grid>
-            </Grid>
-
-            <Stack
-              direction="row"
-              justifyContent="flex-end"
-              spacing={3}
-              sx={{ mt: 5 }}
-            > <Button
-            variant="text"
-            size="large"
-            href="/"
-          >
-      
-            Cancel
-          </Button>
-              <Button
-                variant="contained"
-                size="large"
-                href="/registration-step2"
+              <Stack
+                direction="row"
+                justifyContent="flex-end"
+                spacing={3}
+                sx={{ mt: 5 }}
               >
-          
-                Next
-              </Button>
-            </Stack>
-          </FormControl>
-        </Stack>
-      </Paper>
-    </Container>
+               
+                <Button variant="text" size="large">
+                  <Link
+                    href="/"
+                    sx={{ textDecoration: "none" }}
+                    color="text.linkActive"
+                  >
+                    Cancel{" "}
+                  </Link>
+                </Button>
+                <Button
+                  variant="contained"
+                  size="large"
+                  href="/registration-step2"
+                >
+                  Next
+                </Button>
+              </Stack>
+            </FormControl>
+          </Stack>
+        </Paper>
+      </Container>
+    </Box>
   );
 }
 
