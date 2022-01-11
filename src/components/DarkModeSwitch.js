@@ -1,11 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import IconButton from "@mui/material/IconButton";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import Brightness2RoundedIcon from '@mui/icons-material/Brightness2Rounded';
 import { lightMode, darkMode } from "../features/Theming/ThemeModeSlice";
 import { Button } from "@mui/material";
-
-
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import { Typography } from "@mui/material";
 function DarkModeSwitch() {
   console.log("DARKMODESWITCH.js | Before Use Selector");
   const themeSTATE = useSelector((state) => state.theme.value);
@@ -23,13 +25,22 @@ function DarkModeSwitch() {
   };
   return (
     <div>
-      <Button
+      <ListItemButton onClick={toggleColorMode}>
+          <ListItemIcon color="inherit">
+          {themeSTATE === "dark" ?  <Brightness2RoundedIcon /> : <Brightness7Icon />}
+          </ListItemIcon>
+          <Typography variant="body2" noWrap component="div">
+            <ListItemText primary={themeSTATE === "dark" ? "Dark Mode" : "Light Mode"} disableTypography="true" />
+          </Typography>
+        </ListItemButton>
+
+      {/* <Button
         variant="contained"
         onClick={toggleColorMode}
-        startIcon={<Brightness7Icon />}
+        startIcon={themeSTATE === "dark" ?  <Brightness2RoundedIcon /> : <Brightness7Icon />}
       >
         Dark Mode
-      </Button>
+      </Button> */}
      </div>
       
   );

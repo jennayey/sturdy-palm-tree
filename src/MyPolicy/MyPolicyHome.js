@@ -1,5 +1,14 @@
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
+import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
+import FactCheckIcon from "@mui/icons-material/FactCheck";
+import HelpOutlineRoundedIcon from "@mui/icons-material/HelpOutlineRounded";
+import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
+import InfoIcon from "@mui/icons-material/Info";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import MenuIcon from "@mui/icons-material/Menu";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,7 +24,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import cocolife from "../assets/cocolife-horizontal.png";
-import cocolifeWhite from "../assets/cocolife-horizontal-white.png";
+import DarkModeSwitch from "../components/DarkModeSwitch";
 import MainContent from "./../MainContent";
 import BasicInformation from "./BasicInformation";
 import Coverages from "./Coverages";
@@ -25,14 +34,15 @@ import Loans from "./Loans";
 import Others from "./Others";
 import UpdateInternetAccount from "./UpdateInternetAccount";
 
-import DarkModeSwitch from '../components/DarkModeSwitch'
 const drawerWidth = 240;
 
 // let cTheme = createTheme(customtheme);
 function MyPolicyHome(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [currentScreen, setCurrentScreen] = React.useState(<BasicInformation/>);
+  const [currentScreen, setCurrentScreen] = React.useState(
+    <BasicInformation />
+  );
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -42,54 +52,57 @@ function MyPolicyHome(props) {
     <Box>
       <Toolbar />
 
-      <List sx={{ mt: 5}}>
-        <ListItemButton onClick={()=> setCurrentScreen(<BasicInformation/>)}>
+      <List sx={{ mt: 5 }}>
+        <ListItemButton onClick={() => setCurrentScreen(<BasicInformation />)}>
           <ListItemIcon color="inherit">
-            <InboxIcon />
+            <InfoIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
-            <ListItemText primary="Basic Information" disableTypography="true" />
+            <ListItemText
+              primary="Basic Information"
+              disableTypography="true"
+            />
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={()=> setCurrentScreen(<Coverages/>)}>
+        <ListItemButton onClick={() => setCurrentScreen(<Coverages />)}>
           <ListItemIcon>
-            <InboxIcon color="inherit"/>
+            <FactCheckIcon color="inherit" />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Coverages" disableTypography="true" />
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={()=> setCurrentScreen(<Ledger/>)}>
+        <ListItemButton onClick={() => setCurrentScreen(<Ledger />)}>
           <ListItemIcon>
-            <InboxIcon />
+            <LocalAtmIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Ledger" disableTypography="true" />
           </Typography>
-        </ListItemButton>  
-        
-         <ListItemButton onClick={()=> setCurrentScreen(<Loans/>)}>
+        </ListItemButton>
+
+        <ListItemButton onClick={() => setCurrentScreen(<Loans />)}>
           <ListItemIcon>
-            <InboxIcon />
+            <CreditScoreOutlinedIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Loans" disableTypography="true" />
           </Typography>
         </ListItemButton>
-        <ListItemButton onClick={()=> setCurrentScreen(<History/>)}>
+        <ListItemButton onClick={() => setCurrentScreen(<History />)}>
           <ListItemIcon>
-            <InboxIcon />
+            <HistoryOutlinedIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="History" disableTypography="true" />
           </Typography>
         </ListItemButton>
-            
-        <ListItemButton onClick={()=> setCurrentScreen(<Others/>)}>
+
+        <ListItemButton onClick={() => setCurrentScreen(<Others />)}>
           <ListItemIcon>
-            <InboxIcon />
+            <SupportAgentOutlinedIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Others" disableTypography="true" />
@@ -100,20 +113,26 @@ function MyPolicyHome(props) {
       <List>
         <ListItemButton color="primary">
           <ListItemIcon>
-            <InboxIcon color="inherit"/>
+            <AttachMoneyOutlinedIcon color="inherit" />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Pay Online" disableTypography="true" />
           </Typography>
         </ListItemButton>
-
-  
       </List>
       <Divider />
-      <List> 
-        <ListItemButton  onClick={()=> setCurrentScreen(<UpdateInternetAccount/>)}>
+      <List>
+        {/* <ListItem>
+        <Typography color="text.subtitle2" variant="overline">
+              Account Details
+            </Typography>
+        </ListItem> */}
+
+        <ListItemButton
+          onClick={() => setCurrentScreen(<UpdateInternetAccount />)}
+        >
           <ListItemIcon>
-            <InboxIcon />
+            <AccountCircleIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Internet Account" disableTypography="true" />
@@ -121,7 +140,7 @@ function MyPolicyHome(props) {
         </ListItemButton>
         <ListItemButton disabled>
           <ListItemIcon>
-            <InboxIcon />
+            <HelpOutlineRoundedIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Quick Guide" disableTypography="true" />
@@ -130,17 +149,19 @@ function MyPolicyHome(props) {
 
         <ListItemButton component="a" href="/">
           <ListItemIcon>
-            <InboxIcon />
+            <ExitToAppRoundedIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Log Out" disableTypography="true" />
           </Typography>
         </ListItemButton>
-        <DarkModeSwitch/>
-
-  
       </List>
-    
+      <Divider />
+
+      <List>
+        {" "}
+        <DarkModeSwitch />
+      </List>
     </Box>
   );
 
@@ -148,32 +169,32 @@ function MyPolicyHome(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-     <Box sx={{display: {xs: 'block', md:'flex'}}}>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
-          color= "default"
-           sx={{
-            width: `100%`,
-            ml: { md: `${drawerWidth}px` },
-            zIndex: 2000,
-             
+    <Box sx={{ display: { xs: "block", md: "flex" } }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        color="default"
+        sx={{
+          width: `100%`,
+          ml: { md: `${drawerWidth}px` },
+          zIndex: 2000,
+
           //backgroundColor: "default.background",
-            borderTop: "10px solid #005db9",
-            boxShadow: 'none',
-          }}
-          enableColorOnDark
-        >
-          <Toolbar sx={{ display: "flex", justifyContent: "flex-start" }}>
+          borderTop: "10px solid #005db9",
+          boxShadow: "none",
+        }}
+        enableColorOnDark
+      >
+        <Toolbar sx={{ display: "flex", justifyContent: "flex-start" }}>
           <IconButton
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { md: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Stack
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { md: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Stack
             direction="row"
             spacing={2}
             divider={<Divider orientation="vertical" flexItem />}
@@ -191,62 +212,59 @@ function MyPolicyHome(props) {
               MyPolicy
             </Typography>
           </Stack>
-          
-
-          </Toolbar>
-        </AppBar>
-        <Box
-          component="nav"
-          sx={{ width: { xs: drawerWidth }, flexShrink: { md: 0} }}
-          aria-label="mailbox folders"
-        >
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            sx={{
-              display: { xs: "block" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: drawerWidth,
-              
-              },
-            }}
-          >
-            {drawer}
-          </Drawer>
-          <Drawer
-            variant="permanent"
-            sx={{
-              display: { xs: "none", md: "block" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: drawerWidth,
-              },
-              padding: '20px',
-            }}
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Box>
-        <Box
-          component="div"
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { xs: drawerWidth }, flexShrink: { md: 0 } }}
+        aria-label="mailbox folders"
+      >
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
           sx={{
-            height: "100%",
-            flexGrow: 1,
-            p: 3,
-            width: {xs: '100%', md: `calc(100% - ${drawerWidth}px)` },
-           }}
+            display: { xs: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
         >
-          <MainContent screen={currentScreen} />
-        </Box>
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: "none", md: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+            padding: "20px",
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
       </Box>
+      <Box
+        component="div"
+        sx={{
+          height: "100%",
+          flexGrow: 1,
+          p: 3,
+          width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
+        }}
+      >
+        <MainContent screen={currentScreen} />
+      </Box>
+    </Box>
   );
 }
 export default MyPolicyHome;

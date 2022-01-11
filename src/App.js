@@ -50,6 +50,7 @@ export default function App() {
                   secondary: "rgba(13, 18, 38, 0.75)", //headings
                   disabled: "rgba(255, 255, 255, 0.5)", //disabled
                   subtitle2: "rgba(76, 88, 125, .8)", //for small heading guides
+                  linkActive: "#005db9",
                 },
                 background: {
                   // default: '#eff8fa',
