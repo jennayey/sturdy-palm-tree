@@ -56,8 +56,8 @@ export default function App() {
                   // default: '#eff8fa',
                   // default: "rgba(248,250,253,1)",
                   default: "white",
-                  paper: "rgba(228, 229, 235, 0.2)",
-                  appbar: "#fff",
+                  // paper: "rgba(228, 229, 235, 0.2)",
+                  paper: "#FAFAFB",
                 },
                 header: {
                   color: "#fff",
@@ -105,6 +105,13 @@ export default function App() {
                     },
                   },
                 },
+                MuiDrawer: {
+                  styleOverrides: {
+                    paper: {
+                      backgroundImage: "none",
+                    },
+                  },
+                },
               }
             : {
                 MuiAppBar: {
@@ -113,6 +120,13 @@ export default function App() {
                       backgroundImage: "none",
                       backgroundColor: "#181a26",
                       borderBottom: "1px solid rgba(50, 54, 71 ,0.90)",
+                    },
+                  },
+                },
+                MuiDrawer: {
+                  styleOverrides: {
+                    paper: {
+                      backgroundImage: "none",
                     },
                   },
                 },
