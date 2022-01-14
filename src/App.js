@@ -48,7 +48,7 @@ export default function App() {
                   primary: "rgba(13, 18, 38,1)", //headings
                   hint: "rgba(0,0,0,0.38)", //hints
                   secondary: "rgba(13, 18, 38, 0.75)", //headings
-                  disabled: "rgba(255, 255, 255, 0.5)", //disabled
+                  disabled: "rgba(0, 0, 0, 0.7)", //disabled
                   subtitle2: "rgba(76, 88, 125, .8)", //for small heading guides
                   linkActive: "#005db9",
                 },

@@ -39,6 +39,7 @@ import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 import { Policy } from "@mui/icons-material";
 import EmployeeInquiry from "./EmployeeInquiry";
+import EmployeeInquiryProfile from "./EmployeeInquiryProfile";
 import Collapse from '@mui/material/Collapse'
 import AccountProfileForm from "./AccountProfileForm";
 const drawerWidth = 240;
@@ -59,7 +60,7 @@ const clickDropdown2 = () => {
   setOpenDropdown2(!openDropdown2)
 }
 const clickDropdown3 = () => {
-  setOpenDropdown3(!openDropdown2)
+  setOpenDropdown3(!openDropdown3)
 }
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -146,6 +147,12 @@ const clickDropdown3 = () => {
         
         <Typography variant="caption" noWrap component="div">
           <ListItemText primary="Employee Inquiry Upload"  disableTypography="true"/>
+          </Typography>
+        </ListItemButton>
+        <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<EmployeeInquiryProfile/>)}>
+        
+        <Typography variant="caption" noWrap component="div">
+          <ListItemText primary="Employee Inquiry Profile"  disableTypography="true"/>
           </Typography>
         </ListItemButton>
 
