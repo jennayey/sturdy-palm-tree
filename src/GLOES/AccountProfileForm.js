@@ -29,300 +29,292 @@ export default function AccountProfileForm() {
         Account Profile Form
       </Typography>
 
-      <Typography variant="h6">Personal Data</Typography>
+      <Typography variant="h6" color="text.primary">
+        Personal Data
+      </Typography>
       <Divider sx={{ mt: 1 }} />
-      <Grid container spacing={2} sx={{ mt: 1}} >
-          <Grid item xs={12} md={12} lg={12} xl={6}>
-      <Grid container spacing={2} >
-        <Grid item xs={12} sm={6}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Employee No.
-            </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="34343224"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Certificate No.
-            </Typography>
+      <Grid container sx={{ mt: 3 }}>
+        <Grid item xs={12} lg={8}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  First name
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="223323455"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             First Name
-            </Typography>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Middle Name
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        
-        <Grid item xs={12} sm={4}>
-          <Stack>
-            <Typography color="text" variant="overline">
-            Middle Name
-            </Typography>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Last name
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Last Name
-            </Typography>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={6} md={2}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  suffix
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={4} sm={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Suffix
-            </Typography>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={6} md={2}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Age
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={4} sm={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Age
-            </Typography>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Date Of Birth
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={4} sm={6}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Date of Birth
-            </Typography>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={6} md={4}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Gender
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="12/24/2004"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Place of Birth
-            </Typography>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={6} md={4}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Weight (lbs)
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={8}>
-          <Stack>
-            <Typography color="text" variant="overline">
-              Address
-            </Typography>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={6} md={4}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Height (cm)
+                </Typography>
 
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Gender
-            </Typography>
-
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Civil Status
-            </Typography>
-
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Weight
-            </Typography>
-
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-             Height
-            </Typography>
-
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="Test"
-            />
-          </Stack>
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-              Tel. No.
-            </Typography>
-
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="23242733"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-              Mobile No.
-            </Typography>
-
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="23242733"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-              Application No.
-            </Typography>
-
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="23242733"
-            />
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Stack>
-            <Typography color="text" variant="overline">
-              Date Accomplished
-            </Typography>
-
-            <TextField
-              id="outlined-basic"
-              size="small"
-              variant="outlined"
-              hiddenLabel
-              value="09/23/2021"
-            />
-          </Stack>
-        </Grid>
-        {/* <Grid item xs={12} sx={{ mt: 3 }}>
-          <Stack spacing={2} direction="row">
-            <Button variant="contained" size="large">
-              Update Information{" "}
-            </Button>
-            <Button variant="text" size="large">
-              Cancel
-            </Button>
-          </Stack>
-        </Grid> */}
       </Grid>
-      </Grid>
-      </Grid>
-      <Divider sx={{mt: 5}}/>
-  <Box sx={{mt: 5, display: "flex", justifyContent: "flex-end"}}><Button variant="text" sx={{mr: 2}}> Cancel</Button> <Button variant="contained"> Update</Button> </Box>
+      <Typography variant="h6" color="text.primary" sx={{ mt: 8 }}>
+        Additional Information
+      </Typography>
+      <Divider sx={{ mt: 1 }} />
 
-      
+      <Grid container sx={{ mt: 3 }}>
+        <Grid item xs={12} lg={8}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Home Address
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Place of Birth
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Civil Status
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Email Address
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                  Telephone Number
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+
+      {/* Site Information block */}
+
+      <Typography variant="h6" color="text.primary" sx={{ mt: 8 }}>
+        Policy Information
+      </Typography>
+      <Divider sx={{ mt: 1 }} />
+
+      <Grid container sx={{ mt: 3 }}>
+        <Grid item xs={12} lg={8}>
+          <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}md={6}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                 Employee No.
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12}sm={6} md={6}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                   Certificate No.
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={6}md={6}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                 Application No.
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12}sm={6} md={6}>
+              <Stack>
+                <Typography variant="overline" color="text.body2">
+                   Date Accomplished
+                </Typography>
+
+                <TextField
+                  id="outlined-basic"
+                  size="small"
+                  variant="outlined"
+                />
+              </Stack>
+            </Grid>
+            <Grid item xs={12}>
+            <Stack
+          direction="row"
+          justifyContent="flex-end"
+          spacing={3}
+          sx={{ mt: 5 }}
+        >
+          <Button variant="text" size="large" color="secondary">
+            Cancel
+          </Button>
+          <Button variant="contained" size="large">
+            Update Profile
+          </Button>
+        </Stack>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+     
     </div>
   );
 }
