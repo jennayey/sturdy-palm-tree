@@ -42,7 +42,7 @@ export default function App() {
                   main: "#005db9",
                 },
                 secondary: {
-                  main: "#00af43",
+                  main: "#005db9",
                 },
                 text: {
                   primary: "rgba(13, 18, 38,1)", //headings

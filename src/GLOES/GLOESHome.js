@@ -22,6 +22,7 @@ import EmployeeInquiryUpload from "./EmployeeInquiryUpload";
 import Enrollment from "./Enrollment";
 import Home from "./HomeContent";
 import Maintenance from "./Maintenance";
+import MaintenanceSite from "./MaintenanceSite"
 import Reports from "./Reports";
 import UserProfile from "./UserProfile";
 import PolicyInquiry from "./PolicyInquiry";
@@ -37,6 +38,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 import { Policy } from "@mui/icons-material";
+import EmployeeInquiry from "./EmployeeInquiry";
 import Collapse from '@mui/material/Collapse'
 import AccountProfileForm from "./AccountProfileForm";
 const drawerWidth = 240;
@@ -47,9 +49,17 @@ export default function GLOESHome(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [currentScreen, setCurrentScreen] = React.useState(<Home />);
   const [openDropdown, setOpenDropdown ] = React.useState(false);
+  const [openDropdown2, setOpenDropdown2 ] = React.useState(false);
+  const [openDropdown3, setOpenDropdown3 ] = React.useState(false);
 
 const clickDropdown = () => {
   setOpenDropdown(!openDropdown)
+}
+const clickDropdown2 = () => {
+  setOpenDropdown2(!openDropdown2)
+}
+const clickDropdown3 = () => {
+  setOpenDropdown3(!openDropdown2)
 }
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -114,29 +124,33 @@ const clickDropdown = () => {
           </Typography>
         </ListItemButton>
 
-        {/* <ListItemButton disabled>
+        <ListItemButton onClick={clickDropdown2}>
           <ListItemIcon>
-            <InboxIcon />
+            <UploadRoundedIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Employee Inquiry" disableTypography="true" />
           </Typography>
-        </ListItemButton> */}
+        </ListItemButton>
 
-        <ListItemButton
-          onClick={() => setCurrentScreen(<EmployeeInquiryUpload />)}
-        >
-          <ListItemIcon>
-            <UploadRoundedIcon />
-          </ListItemIcon>
-          <Typography variant="body2" component="div">
-            <ListItemText
-              primary="Employee Inquiry Upload"
-              disableTypography="true"
-            />
+      
+        <Collapse in={openDropdown2} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItemButton sx={{ pl: 7}}   onClick={() => setCurrentScreen(<EmployeeInquiry/>)}>
+        
+          <Typography variant="caption" noWrap component="div">
+            <ListItemText primary="Employee Inquiry"  disableTypography="true"/>
+            </Typography>
+          </ListItemButton>
+          <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<EmployeeInquiryUpload/>)}>
+        
+        <Typography variant="caption" noWrap component="div">
+          <ListItemText primary="Employee Inquiry Upload"  disableTypography="true"/>
           </Typography>
         </ListItemButton>
 
+        </List>
+      </Collapse>
         <ListItemButton onClick={() => setCurrentScreen(<PolicyInquiry />)}>
           <ListItemIcon>
             <AddCircleOutlineRoundedIcon />
@@ -164,7 +178,7 @@ const clickDropdown = () => {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={() => setCurrentScreen(<Maintenance />)}>
+        <ListItemButton onClick={clickDropdown3}>
           <ListItemIcon>
             <MiscellaneousServicesRoundedIcon />
           </ListItemIcon>
@@ -173,6 +187,23 @@ const clickDropdown = () => {
           </Typography>
         </ListItemButton>
       </List>
+      <Collapse in={openDropdown3} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItemButton sx={{ pl: 7}}   onClick={() => setCurrentScreen(<Maintenance/>)}>
+        
+          <Typography variant="caption" noWrap component="div">
+            <ListItemText primary="Seach Employee"  disableTypography="true"/>
+            </Typography>
+          </ListItemButton>
+          <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<MaintenanceSite/>)}>
+        
+        <Typography variant="caption" noWrap component="div">
+          <ListItemText primary="Search Site"  disableTypography="true"/>
+          </Typography>
+        </ListItemButton>
+
+        </List>
+      </Collapse>
 
       <Divider />
       <List>

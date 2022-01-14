@@ -34,19 +34,20 @@ import Loans from "./Loans";
 import Others from "./Others";
 import UpdateInternetAccount from "./UpdateInternetAccount";
 import MyPolicies from "./MyPolicies";
-
+import HomeContent from "./HomeContent";
 import Collapse from '@mui/material/Collapse'
 
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import QuickGuide from "./QuickGuide";
 const drawerWidth = 240;
+import Avatar from '@mui/material/Avatar';
 
 // let cTheme = createTheme(customtheme);
 function MyPolicyHome(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [currentScreen, setCurrentScreen] = React.useState();
+  const [currentScreen, setCurrentScreen] = React.useState(<HomeContent/>);
 
   const [openDropdown, setOpenDropdown ] = React.useState(false);
 
@@ -212,7 +213,15 @@ const clickDropdown = () => {
         }}
         enableColorOnDark
       >
-        <Toolbar sx={{ display: "flex", justifyContent: "flex-start" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          
+          <div>
+          <Stack
+            direction="row"
+            spacing={2}
+            alignItems="center"
+          >
+          
           <IconButton
             aria-label="open drawer"
             edge="start"
@@ -227,6 +236,7 @@ const clickDropdown = () => {
             divider={<Divider orientation="vertical" flexItem />}
             alignItems="center"
           >
+          
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <img src={cocolife} style={{ height: "20px" }} />
             </Box>
@@ -239,6 +249,10 @@ const clickDropdown = () => {
               MyPolicy
             </Typography>
           </Stack>
+          </Stack>
+
+          </div>
+          <Avatar sx={{cursor: "pointer"}} onClick={() => setCurrentScreen(<UpdateInternetAccount />)}>N</Avatar>
         </Toolbar>
       </AppBar>
       <Box

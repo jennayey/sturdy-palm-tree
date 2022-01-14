@@ -25,6 +25,22 @@ export default function UpdateInternetAccount() {
 
       <Divider sx={{ mt: 1 }} />
       <Grid container spacing={2} sx={{ mt: 1 }}>
+      <Grid item xs={12} sx={{ mb: 5 }}>
+      <Typography color="text.primary" variant="overline">
+Profile Picture            </Typography>
+          <Stack direction="row" spacing={2} alignItems="center"  sx={{mt:2}}>
+            
+
+           <Avatar sx={{ width: 128, height: 128}}>N</Avatar>
+           <Stack spacing={2}>
+         
+<Button variant="contained" size="small">Change Profile Picture</Button>
+<Button  size="small">Remove Profile Picture</Button>
+
+           </Stack>
+
+          </Stack>
+        </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Stack>
             <Typography color="text.primary" variant="overline">

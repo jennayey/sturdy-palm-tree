@@ -18,15 +18,21 @@ import Table from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
 import { TableBody } from "@mui/material";
+import TableRow from "@mui/material/TableRow";
 import Box from "@mui/material/Box";
 
-function Maintenance(props) {
+function MaintenanceSite(props) {
   const [reportType, setReportType] = React.useState("");
   const [siteName, setSiteName] = React.useState("");
   const [dateThing, setDateThing] = React.useState("");
+function maintenanceSites (siteCode, siteName, status) {
+    return {siteCode,siteName, status}
+}
 
+const maintenanceSitesList = [
+    maintenanceSites("00064", "Samsung Electro-Mechanics Philippines Corporation", "Active")
+]
   const handleReportType = (event) => {
     setReportType(event.target.value);
   };
@@ -39,57 +45,40 @@ function Maintenance(props) {
     setDateThing(event.target.value);
   };
 
-  function maintenanceEmployee (siteCode, siteName, status) {
-    return {siteCode,siteName, status}
-}
-
-const maintenanceEmployeeList = [
-  maintenanceEmployee("00014", "Rendon Labrador", "Active")
-]
-
   return (
     <Box sx={{ width: '100%' }}>
      <Typography variant="h4"  color="text.primary" sx={{ mb: 5 }}>
-        Site Admin Maintenance
+        Site Maintenance
       </Typography>
 
       {/* <Typography variant="overline">Upload your files</Typography> */}
       {/* Search Employee Section */}
 
         <Typography variant="h6" color="text.primary">
-          Search Employee
+          Search Site
         </Typography>
         <Divider sx={{ mt:1 }}/>
-        <br />
       <FormControl sx={{ my: 1}} fullWidth>
-          <Typography variant="overline">Employee number</Typography>
-
-          <TextField id="outlined-basic" size="small"  variant="outlined" />
+          
           <Grid container spacing={2} sx={{ mt: 1 }}>
-            <Grid item xs={12} sm={12} md={4} lg={4}>
+            <Grid item xs={12} sm={6}>
               <Stack>
-                <Typography variant="overline">First Name</Typography>
+                <Typography variant="overline">Site Name</Typography>
 
                 <TextField size="small" variant="outlined" hiddenLabel />
               </Stack>
             </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4}>
-              <Stack>
-                <Typography variant="overline">Middle Name</Typography>
+            <Grid item xs={12} sm={6}>
+                <Stack>
+                <Typography variant="overline">Site Code</Typography>
 
-                <TextField id="outlined-basic" size="small"  variant="outlined" />
-              </Stack>
-            </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4}>
-              <Stack>
-                <Typography variant="overline">Last Name</Typography>
-
-                <TextField id="outlined-basic" size="small"  variant="outlined" />
-              </Stack>
+<TextField id="outlined-basic" size="small"  variant="outlined" />
+                </Stack>
+           
             </Grid>
           </Grid>
           <Typography variant="overline" sx={{ mt: 2 }}>
-            Site
+            Status
           </Typography>
 
           <Select
@@ -101,10 +90,13 @@ const maintenanceEmployeeList = [
             inputProps={{ "aria-label": "Without label" }}
           >
             <MenuItem value="">
-              <em>Select Site</em>
+              <em>Select Status</em>
             </MenuItem>
             <MenuItem value="Addition">
-              Samsung Electro-Mechanics Philippines Corporation{" "}
+              Active
+            </MenuItem>
+            <MenuItem value="Addition">
+              Inactive
             </MenuItem>
           </Select>
           <br />
@@ -128,7 +120,6 @@ const maintenanceEmployeeList = [
         <br />
       <br />
       {/* Search Results Section */}
-
       <Typography variant="h6" color="text.primary" sx={{ mt: 5 }}>
           Search Results
         </Typography>
@@ -143,12 +134,12 @@ const maintenanceEmployeeList = [
             <TableHead>
               <TableRow>
                 <TableCell align="left" sx={{ fontWeight: "600" }}>Site Code</TableCell>
-                <TableCell align="left" sx={{ fontWeight: "600" }}>Name</TableCell>
+                <TableCell align="left" sx={{ fontWeight: "600" }}>Site Name</TableCell>
                 <TableCell align="left" sx={{ fontWeight: "600" }}>Status</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-            {maintenanceEmployeeList.map((row) => (
+            {maintenanceSitesList.map((row) => (
                 <TableRow
                   hover
                   key={row.siteCode}
@@ -171,4 +162,4 @@ const maintenanceEmployeeList = [
   );
 }
 
-export default Maintenance;
+export default MaintenanceSite;
