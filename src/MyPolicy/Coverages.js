@@ -25,7 +25,59 @@ function Policies(
 ) {
   return { plan, annual, semiAnnual, quarterly, monthly, premRate, substdRate };
 }
+function CoveragesList(
+  plan,
+premium,
+faceAmount,
+maturity,
+payEnd,
+status
+) {
+  return {   plan,
+    premium,
+    faceAmount,
+    maturity,
+    payEnd,
+    status };
+}
+const coverageDetails = [
+  CoveragesList(
+    "Future Savings (Platinum) (10-Pay WL With A.E.(OPT 1))",
+    "4,268.25",
+    "100,000.00",
+    "09-29-2077",
+    "09-29-2044",
+    "Inforce"
 
+  ),
+  CoveragesList(
+    "Accidental Death & Dismemberment Add",
+    "4,268.25",
+    "100,000.00",
+    "09-29-2077",
+    "09-29-2044",
+    "Inforce"
+
+  ),
+  CoveragesList(
+    "Waiver of Premium Due to Disability - 10Pay (WPD)",
+    "426.33",
+    "225.95",
+    "117.24",
+    "41.57",
+    "2.62",
+    "0.0"
+  ),
+  CoveragesList(
+    "Terminal Illness Living Benefit (TILB)",
+    "426.33",
+    "225.95",
+    "117.24",
+    "41.57",
+    "2.62",
+    "0.0"
+  ),
+];
 const policyList = [
   Policies(
     "Future Savings (Platinum)",
@@ -46,7 +98,7 @@ const policyList = [
     "0.0"
   ),
   Policies(
-    "Waiver of Premium Due to Disability - 10Pay WPD",
+    "Waiver of Premium Due to Disability - 10Pay (WPD)",
     "426.33",
     "225.95",
     "117.24",
@@ -72,7 +124,7 @@ function Coverages(props) {
       </Typography>
       <Typography variant="h6">Premium Breakdowns</Typography>
     
-      <Box sx={{ mt: 3}}>
+      <Box sx={{ mt: 2}}>
         {/* <Typography variant="overline">Policies</Typography> */}
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -148,6 +200,61 @@ function Coverages(props) {
 
                 <TableCell colSpan={3} />
               </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+
+      <Typography variant="h6" sx={{mt: 5}}>Coverage Details </Typography>
+    
+      <Box sx={{ mt: 2}}>
+        {/* <Typography variant="overline">Policies</Typography> */}
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow sx={{ fontWeight: "600" }}>
+                <TableCell align="left" sx={{ fontWeight: "600" }}>
+                  Plan
+                </TableCell>
+                <TableCell align="right" sx={{ fontWeight: "600" }}>
+                  Premium
+                </TableCell>
+                <TableCell align="right" sx={{ fontWeight: "600" }}>
+                 Face Amount
+                </TableCell>
+                <TableCell align="right" sx={{ fontWeight: "600" }}>
+                  Maturity
+                </TableCell>
+
+                <TableCell align="right" sx={{ fontWeight: "600" }}>
+                  Pay End
+                </TableCell>
+
+                <TableCell align="right" sx={{ fontWeight: "600" }}>
+Status                </TableCell>
+
+                
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {coverageDetails.map((row) => (
+                <TableRow
+                hover
+                  key={row.plan}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.plan}
+                  </TableCell>
+                  <TableCell align="right">{row.premium}</TableCell>
+                  <TableCell align="right">{row.faceAmount}</TableCell>
+                  <TableCell align="right">{row.maturity}</TableCell>
+                  <TableCell align="right">{row.payEnd}</TableCell>
+                  <TableCell align="right">{row.status}</TableCell>
+                </TableRow>
+              ))}
+              <TableRow />
+              
             </TableBody>
           </Table>
         </TableContainer>

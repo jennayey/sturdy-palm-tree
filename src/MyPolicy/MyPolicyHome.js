@@ -26,23 +26,33 @@ import * as React from "react";
 import cocolife from "../assets/cocolife-horizontal.png";
 import DarkModeSwitch from "../components/DarkModeSwitch";
 import MainContent from "./../MainContent";
-import BasicInformation from "./BasicInformation";
+import AddRemovePolicy from "./AddRemovePolicy";
 import Coverages from "./Coverages";
 import History from "./History";
 import Ledger from "./Ledger";
 import Loans from "./Loans";
 import Others from "./Others";
 import UpdateInternetAccount from "./UpdateInternetAccount";
+import MyPolicies from "./MyPolicies";
 
+import Collapse from '@mui/material/Collapse'
+
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import QuickGuide from "./QuickGuide";
 const drawerWidth = 240;
 
 // let cTheme = createTheme(customtheme);
 function MyPolicyHome(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [currentScreen, setCurrentScreen] = React.useState(
-    <BasicInformation />
-  );
+  const [currentScreen, setCurrentScreen] = React.useState();
+
+  const [openDropdown, setOpenDropdown ] = React.useState(false);
+
+const clickDropdown = () => {
+  setOpenDropdown(!openDropdown)
+}
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -53,7 +63,7 @@ function MyPolicyHome(props) {
       <Toolbar />
 
       <List sx={{ mt: 5 }}>
-        <ListItemButton onClick={() => setCurrentScreen(<BasicInformation />)}>
+        <ListItemButton onClick={clickDropdown}>
           <ListItemIcon color="inherit">
             <InfoIcon />
           </ListItemIcon>
@@ -64,6 +74,23 @@ function MyPolicyHome(props) {
             />
           </Typography>
         </ListItemButton>
+        <Collapse in={openDropdown} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItemButton sx={{ pl: 7}}  onClick={() => setCurrentScreen(<MyPolicies/>)}>
+        
+          <Typography variant="caption" noWrap component="div">
+            <ListItemText primary="My Policies"  disableTypography="true"/>
+            </Typography>
+          </ListItemButton>
+          <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<AddRemovePolicy/>)}>
+        
+        <Typography variant="caption" noWrap component="div">
+          <ListItemText primary="Add or Remove Policies"  disableTypography="true"/>
+          </Typography>
+        </ListItemButton>
+
+        </List>
+      </Collapse>
 
         <ListItemButton onClick={() => setCurrentScreen(<Coverages />)}>
           <ListItemIcon>
@@ -138,7 +165,7 @@ function MyPolicyHome(props) {
             <ListItemText primary="Internet Account" disableTypography="true" />
           </Typography>
         </ListItemButton>
-        <ListItemButton disabled>
+        <ListItemButton onClick={() => setCurrentScreen(<QuickGuide />)}>
           <ListItemIcon>
             <HelpOutlineRoundedIcon />
           </ListItemIcon>

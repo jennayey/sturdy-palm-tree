@@ -34,15 +34,14 @@ const registeredList = [
         "T00114131", "Honey Accumulator Classic", "Inforce"
        )
   ];
-function BasicInformation(props) {
+function AddRemovePolicy(props) {
   return (
     <Box sx={{ width: '100%' }}>
-      <Typography variant="h4" sx={{mb: 5}} color="text.primary">
-        Basic Information
+      <Typography variant="h4" sx={{mb: 2}} color="text.primary">
+      Add or Remove Policy
       </Typography>
-      <Typography variant="h6" color="text.primary">Add or Remove Policy</Typography>
       <Typography variant="body1" color="text.secondary">
-        Your current policy registration is shown below. If you have more than
+        Your cur.rent policy registration is shown below. If you have more than
         one policy, you can add other policies by clicking the "Register this"
         link under the My Other Policies section.
       </Typography>
@@ -119,4 +118,4 @@ function BasicInformation(props) {
   );
 }
 
-export default BasicInformation;
+export default AddRemovePolicy;

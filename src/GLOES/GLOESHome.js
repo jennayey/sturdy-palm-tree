@@ -24,7 +24,7 @@ import Home from "./HomeContent";
 import Maintenance from "./Maintenance";
 import Reports from "./Reports";
 import UserProfile from "./UserProfile";
-
+import PolicyInquiry from "./PolicyInquiry";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
@@ -36,15 +36,21 @@ import MiscellaneousServicesRoundedIcon from '@mui/icons-material/MiscellaneousS
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
-
+import { Policy } from "@mui/icons-material";
+import Collapse from '@mui/material/Collapse'
+import AccountProfileForm from "./AccountProfileForm";
 const drawerWidth = 240;
-
+import QuickGuide from "./QuickGuide";
 // let cTheme = createTheme(customtheme);
 export default function GLOESHome(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [currentScreen, setCurrentScreen] = React.useState(<Home />);
+  const [openDropdown, setOpenDropdown ] = React.useState(false);
 
+const clickDropdown = () => {
+  setOpenDropdown(!openDropdown)
+}
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -72,7 +78,7 @@ export default function GLOESHome(props) {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={() => setCurrentScreen(<AccountProfile />)}>
+        <ListItemButton onClick={clickDropdown}>
           <ListItemIcon>
             <ManageAccountsRoundedIcon />
           </ListItemIcon>
@@ -80,6 +86,24 @@ export default function GLOESHome(props) {
             <ListItemText primary="Account Profile" disableTypography="true" />
           </Typography>
         </ListItemButton>
+        <Collapse in={openDropdown} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItemButton sx={{ pl: 7}}  onClick={() => setCurrentScreen(<AccountProfileForm/>)}>
+        
+          <Typography variant="caption" noWrap component="div">
+            <ListItemText primary="My Account Profile"  disableTypography="true"/>
+            </Typography>
+          </ListItemButton>
+          <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<AccountProfile/>)}>
+        
+        <Typography variant="caption" noWrap component="div">
+          <ListItemText primary="Movements"  disableTypography="true"/>
+          </Typography>
+        </ListItemButton>
+
+        </List>
+      </Collapse>
+
 
         <ListItemButton onClick={() => setCurrentScreen(<BenefitSummary />)}>
           <ListItemIcon>
@@ -113,14 +137,14 @@ export default function GLOESHome(props) {
           </Typography>
         </ListItemButton>
 
-        {/* <ListItemButton disabled>
+        <ListItemButton onClick={() => setCurrentScreen(<PolicyInquiry />)}>
           <ListItemIcon>
-            <InboxIcon />
+            <AddCircleOutlineRoundedIcon />
           </ListItemIcon>
           <Typography variant="body2" noWrap component="div">
             <ListItemText primary="Policy Inquiry" disableTypography="true" />
           </Typography>
-        </ListItemButton> */}
+        </ListItemButton>
 
         {/* <ListItemButton disabled>
           <ListItemIcon>
@@ -161,7 +185,7 @@ export default function GLOESHome(props) {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton disabled>
+        <ListItemButton onClick={() => setCurrentScreen(<QuickGuide />)}>
           <ListItemIcon>
             <HelpOutlineRoundedIcon />
           </ListItemIcon>
