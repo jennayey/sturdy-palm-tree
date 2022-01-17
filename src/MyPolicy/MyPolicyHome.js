@@ -36,6 +36,7 @@ import UpdateInternetAccount from "./UpdateInternetAccount";
 import MyPolicies from "./MyPolicies";
 import HomeContent from "./HomeContent";
 import Collapse from '@mui/material/Collapse'
+import PayOnline from "../PayOnline";
 
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -139,7 +140,7 @@ const clickDropdown = () => {
       </List>
       <Divider />
       <List>
-        <ListItemButton color="primary">
+        <ListItemButton color="primary" onClick={() => setCurrentScreen(<PayOnline />)}>
           <ListItemIcon>
             <AttachMoneyOutlinedIcon color="inherit" />
           </ListItemIcon>

@@ -10,7 +10,7 @@ import Login from "./Login";
 import MyPolicyHome from "./MyPolicy/MyPolicyHome";
 import UserRegistration from "./MyPolicy/UserRegistration";
 import UserRegistration2 from "./MyPolicy/UserRegistration2";
-
+import PrivacyPolicy from "./PrivacyPolicy"
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 export default function App() {
@@ -198,6 +198,7 @@ export default function App() {
             <Route path="forgot-password-email" element={<ForgotPassword2 />} />
             <Route path="registration" element={<UserRegistration />} />
             <Route path="registration-step2" element={<UserRegistration2 />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy/>}/>
           </Routes>
         </ThemeProvider>
       </ColorModeContext.Provider>
