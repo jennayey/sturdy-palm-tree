@@ -401,7 +401,7 @@ export default function PayOnline() {
             </Box>
             <FormControlLabel
               control={<Checkbox />}
-              label="I accept the Terms & Conditions"
+              label={<Stack direction="row"><Typography>I accept the</Typography>&nbsp;<Typography color="text.linkActive">Terms & Conditions</Typography> </Stack>}
               checked={accepted}
               sx={{ mt: 4 }}
               onClick={handleOpen}
@@ -412,14 +412,14 @@ export default function PayOnline() {
           <Typography variant="body" color="text.primary">
                I accept the <Typography color="text.linkActive" onClick={handleOpen}>terms & conditions</Typography>
               </Typography>
-          </Stack> */}
+          </Stack>  */}
             {/* <Button variant="contained" onClick={handleOpen} sx={{ mt: 4 }}>
               Proceed to Payment
-            </Button> */}
+            </Button>*/}
 
             <div>
               {accepted === true ? (
-                <Button variant="contained" onClick={handleOpen} sx={{ mt: 4 }}>
+                <Button variant="contained" sx={{ mt: 4 }}>
                   Proceed to Payment
                 </Button>
               ) : (
