@@ -66,12 +66,20 @@ const clickDropdown3 = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleListItemClick = (event, index, screen) => {
+    setSelectedIndex(index);
+    setCurrentScreen(screen)
+  };
+
+
   const drawer = (
     <Box>
       <Toolbar />
 
       <List sx={{ mt: 5 }}>
-        <ListItemButton onClick={() => setCurrentScreen(<Home />)}>
+        <ListItemButton  selected={selectedIndex === 0} onClick={(event) => handleListItemClick(event, 0, <Home />)}>
           <ListItemIcon>
             <HomeRoundedIcon />
           </ListItemIcon>
@@ -80,7 +88,7 @@ const clickDropdown3 = () => {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={() => setCurrentScreen(<Enrollment />)}>
+        <ListItemButton selected={selectedIndex === 1} onClick={(event) => handleListItemClick(event, 1,<Enrollment />)}>
           <ListItemIcon>
             <AddCircleOutlineRoundedIcon />
           </ListItemIcon>
@@ -99,13 +107,13 @@ const clickDropdown3 = () => {
         </ListItemButton>
         <Collapse in={openDropdown} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 7}}  onClick={() => setCurrentScreen(<AccountProfileForm/>)}>
+          <ListItemButton sx={{ pl: 7}} selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2 ,<AccountProfileForm/>)}>
         
           <Typography variant="caption" noWrap component="div">
             <ListItemText primary="My Account Profile"  disableTypography="true"/>
             </Typography>
           </ListItemButton>
-          <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<AccountProfile/>)}>
+          <ListItemButton sx={{ pl: 7}} selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3,<AccountProfile/>)}>
         
         <Typography variant="caption" noWrap component="div">
           <ListItemText primary="Movements"  disableTypography="true"/>
@@ -116,7 +124,7 @@ const clickDropdown3 = () => {
       </Collapse>
 
 
-        <ListItemButton onClick={() => setCurrentScreen(<BenefitSummary />)}>
+        <ListItemButton selected={selectedIndex === 4} onClick={(event) => handleListItemClick(event, 4,<BenefitSummary />)}>
           <ListItemIcon>
             <AssignmentTurnedInRoundedIcon />
           </ListItemIcon>
@@ -137,19 +145,19 @@ const clickDropdown3 = () => {
       
         <Collapse in={openDropdown2} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 7}}   onClick={() => setCurrentScreen(<EmployeeInquiry/>)}>
+          <ListItemButton sx={{ pl: 7}} selected={selectedIndex === 5} onClick={(event) => handleListItemClick(event, 5,<EmployeeInquiry/>)}>
         
           <Typography variant="caption" noWrap component="div">
             <ListItemText primary="Employee Inquiry"  disableTypography="true"/>
             </Typography>
           </ListItemButton>
-          <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<EmployeeInquiryUpload/>)}>
+          <ListItemButton sx={{ pl: 7}}selected={selectedIndex === 6} onClick={(event) => handleListItemClick(event, 6,<EmployeeInquiryUpload/>)}>
         
         <Typography variant="caption" noWrap component="div">
           <ListItemText primary="Employee Inquiry Upload"  disableTypography="true"/>
           </Typography>
         </ListItemButton>
-        <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<EmployeeInquiryProfile/>)}>
+        <ListItemButton sx={{ pl: 7}} selected={selectedIndex === 7} onClick={(event) => handleListItemClick(event, 7,<EmployeeInquiryProfile/>)}>
         
         <Typography variant="caption" noWrap component="div">
           <ListItemText primary="Employee Inquiry Profile"  disableTypography="true"/>
@@ -158,7 +166,7 @@ const clickDropdown3 = () => {
 
         </List>
       </Collapse>
-        <ListItemButton onClick={() => setCurrentScreen(<PolicyInquiry />)}>
+        <ListItemButton  selected={selectedIndex === 8}onClick={(event) => handleListItemClick(event, 8,<PolicyInquiry />)}>
           <ListItemIcon>
             <AddCircleOutlineRoundedIcon />
           </ListItemIcon>
@@ -176,7 +184,7 @@ const clickDropdown3 = () => {
           </Typography>
         </ListItemButton> */}
 
-        <ListItemButton onClick={() => setCurrentScreen(<Reports />)}>
+        <ListItemButton selected={selectedIndex === 9} onClick={(event) => handleListItemClick(event, 9,<Reports />)}>
           <ListItemIcon>
             <AssessmentRoundedIcon />
           </ListItemIcon>
@@ -196,13 +204,13 @@ const clickDropdown3 = () => {
       </List>
       <Collapse in={openDropdown3} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 7}}   onClick={() => setCurrentScreen(<Maintenance/>)}>
+          <ListItemButton sx={{ pl: 7}} selected={selectedIndex === 10}  onClick={(event) => handleListItemClick(event, 10,<Maintenance/>)}>
         
           <Typography variant="caption" noWrap component="div">
             <ListItemText primary="Seach Employee"  disableTypography="true"/>
             </Typography>
           </ListItemButton>
-          <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<MaintenanceSite/>)}>
+          <ListItemButton sx={{ pl: 7}} selected={selectedIndex === 11} onClick={(event) => handleListItemClick(event, 11,<MaintenanceSite/>)}>
         
         <Typography variant="caption" noWrap component="div">
           <ListItemText primary="Search Site"  disableTypography="true"/>
@@ -214,7 +222,7 @@ const clickDropdown3 = () => {
 
       <Divider />
       <List>
-        <ListItemButton onClick={() => setCurrentScreen(<UserProfile />)}>
+        <ListItemButton selected={selectedIndex === 12} onClick={(event) => handleListItemClick(event, 12,<UserProfile />)}>
           <ListItemIcon>
             <AccountCircleIcon />
           </ListItemIcon>
@@ -223,7 +231,7 @@ const clickDropdown3 = () => {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={() => setCurrentScreen(<QuickGuide />)}>
+        <ListItemButton  selected={selectedIndex === 13} onClick={(event) => handleListItemClick(event, 13,<QuickGuide />)}>
           <ListItemIcon>
             <HelpOutlineRoundedIcon />
           </ListItemIcon>

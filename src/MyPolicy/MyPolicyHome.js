@@ -10,7 +10,9 @@ import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import MenuIcon from "@mui/icons-material/Menu";
 import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
+import Collapse from "@mui/material/Collapse";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -25,36 +27,41 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import cocolife from "../assets/cocolife-horizontal.png";
 import DarkModeSwitch from "../components/DarkModeSwitch";
+import PayOnline from "../PayOnline";
 import MainContent from "./../MainContent";
 import AddRemovePolicy from "./AddRemovePolicy";
 import Coverages from "./Coverages";
 import History from "./History";
+import HomeContent from "./HomeContent";
 import Ledger from "./Ledger";
 import Loans from "./Loans";
-import Others from "./Others";
-import UpdateInternetAccount from "./UpdateInternetAccount";
 import MyPolicies from "./MyPolicies";
-import HomeContent from "./HomeContent";
-import Collapse from '@mui/material/Collapse'
-import PayOnline from "../PayOnline";
-
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import Others from "./Others";
 import QuickGuide from "./QuickGuide";
+import UpdateInternetAccount from "./UpdateInternetAccount";
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropUp';
 const drawerWidth = 240;
-import Avatar from '@mui/material/Avatar';
 
 // let cTheme = createTheme(customtheme);
 function MyPolicyHome(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [currentScreen, setCurrentScreen] = React.useState(<HomeContent/>);
+  const [currentScreen, setCurrentScreen] = React.useState(<HomeContent />);
 
-  const [openDropdown, setOpenDropdown ] = React.useState(false);
+  const [openDropdown, setOpenDropdown] = React.useState(false);
 
-const clickDropdown = () => {
-  setOpenDropdown(!openDropdown)
-}
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleListItemClick = (event, index, screen) => {
+    setSelectedIndex(index);
+    setCurrentScreen(screen)
+  };
+
+
+  const clickDropdown = () => {
+    setOpenDropdown(!openDropdown);
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -66,6 +73,7 @@ const clickDropdown = () => {
 
       <List sx={{ mt: 5 }}>
         <ListItemButton onClick={clickDropdown}>
+          
           <ListItemIcon color="inherit">
             <InfoIcon />
           </ListItemIcon>
@@ -75,26 +83,35 @@ const clickDropdown = () => {
               disableTypography="true"
             />
           </Typography>
+        
         </ListItemButton>
         <Collapse in={openDropdown} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 7}}  onClick={() => setCurrentScreen(<MyPolicies/>)}>
-        
-          <Typography variant="caption" noWrap component="div">
-            <ListItemText primary="My Policies"  disableTypography="true"/>
-            </Typography>
-          </ListItemButton>
-          <ListItemButton sx={{ pl: 7}} onClick={() => setCurrentScreen(<AddRemovePolicy/>)}>
-        
-        <Typography variant="caption" noWrap component="div">
-          <ListItemText primary="Add or Remove Policies"  disableTypography="true"/>
-          </Typography>
-        </ListItemButton>
+          <List component="div" disablePadding>
+            <ListItemButton
+              sx={{ pl: 7 }}
+              selected={selectedIndex === 0}
+              onClick={(event) => handleListItemClick(event, 0, <MyPolicies />)}
+            >
+              <Typography variant="caption" noWrap component="div">
+                <ListItemText primary="My Policies" disableTypography="true" />
+              </Typography>
+            </ListItemButton>
+            <ListItemButton
+              sx={{ pl: 7 }}
+              selected={selectedIndex === 1}
+              onClick={(event) => handleListItemClick(event, 1, <AddRemovePolicy />)}
+            >
+              <Typography variant="caption" noWrap component="div">
+                <ListItemText
+                  primary="Add or Remove Policies"
+                  disableTypography="true"
+                />
+              </Typography>
+            </ListItemButton>
+          </List>
+        </Collapse>
 
-        </List>
-      </Collapse>
-
-        <ListItemButton onClick={() => setCurrentScreen(<Coverages />)}>
+        <ListItemButton selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2, <Coverages />)}>
           <ListItemIcon>
             <FactCheckIcon color="inherit" />
           </ListItemIcon>
@@ -103,7 +120,7 @@ const clickDropdown = () => {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={() => setCurrentScreen(<Ledger />)}>
+        <ListItemButton selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3, <Ledger />)}>
           <ListItemIcon>
             <LocalAtmIcon />
           </ListItemIcon>
@@ -112,7 +129,7 @@ const clickDropdown = () => {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={() => setCurrentScreen(<Loans />)}>
+        <ListItemButton  selected={selectedIndex === 4} onClick={(event) => handleListItemClick(event, 4, <Loans />)}>
           <ListItemIcon>
             <CreditScoreOutlinedIcon />
           </ListItemIcon>
@@ -120,7 +137,7 @@ const clickDropdown = () => {
             <ListItemText primary="Loans" disableTypography="true" />
           </Typography>
         </ListItemButton>
-        <ListItemButton onClick={() => setCurrentScreen(<History />)}>
+        <ListItemButton  selected={selectedIndex === 5} onClick={(event) => handleListItemClick(event, 5, <History />)}>
           <ListItemIcon>
             <HistoryOutlinedIcon />
           </ListItemIcon>
@@ -129,7 +146,7 @@ const clickDropdown = () => {
           </Typography>
         </ListItemButton>
 
-        <ListItemButton onClick={() => setCurrentScreen(<Others />)}>
+        <ListItemButton  selected={selectedIndex === 6} onClick={(event) => handleListItemClick(event, 6, <Others />)}>
           <ListItemIcon>
             <SupportAgentOutlinedIcon />
           </ListItemIcon>
@@ -140,7 +157,11 @@ const clickDropdown = () => {
       </List>
       <Divider />
       <List>
-        <ListItemButton color="primary" onClick={() => setCurrentScreen(<PayOnline />)}>
+        <ListItemButton
+          color="primary"
+          selected={selectedIndex === 7}
+          onClick={(event) => handleListItemClick(event, 7, <PayOnline />)}
+        >
           <ListItemIcon>
             <AttachMoneyOutlinedIcon color="inherit" />
           </ListItemIcon>
@@ -158,7 +179,8 @@ const clickDropdown = () => {
         </ListItem> */}
 
         <ListItemButton
-          onClick={() => setCurrentScreen(<UpdateInternetAccount />)}
+         selected={selectedIndex === 8}
+          onClick={(event) => handleListItemClick(event, 8, <UpdateInternetAccount />)}
         >
           <ListItemIcon>
             <AccountCircleIcon />
@@ -167,7 +189,7 @@ const clickDropdown = () => {
             <ListItemText primary="Internet Account" disableTypography="true" />
           </Typography>
         </ListItemButton>
-        <ListItemButton onClick={() => setCurrentScreen(<QuickGuide />)}>
+        <ListItemButton  selected={selectedIndex === 9} onClick={(event) => handleListItemClick(event, 9, <QuickGuide />)}>
           <ListItemIcon>
             <HelpOutlineRoundedIcon />
           </ListItemIcon>
@@ -215,45 +237,42 @@ const clickDropdown = () => {
         enableColorOnDark
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          
           <div>
-          <Stack
-            direction="row"
-            spacing={2}
-            alignItems="center"
-          >
-          
-          <IconButton
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Stack
-            direction="row"
-            spacing={2}
-            divider={<Divider orientation="vertical" flexItem />}
-            alignItems="center"
-          >
-          
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <img src={cocolife} style={{ height: "20px" }} />
-            </Box>
-            <Typography
-              color="neutral.main"
-              variant="subtitle"
-              noWrap
-              component="div"
-            >
-              MyPolicy
-            </Typography>
-          </Stack>
-          </Stack>
-
+            <Stack direction="row" spacing={2} alignItems="center">
+              <IconButton
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { md: "none" } }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Stack
+                direction="row"
+                spacing={2}
+                divider={<Divider orientation="vertical" flexItem />}
+                alignItems="center"
+              >
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <img src={cocolife} style={{ height: "20px" }} />
+                </Box>
+                <Typography
+                  color="neutral.main"
+                  variant="subtitle"
+                  noWrap
+                  component="div"
+                >
+                  MyPolicy
+                </Typography>
+              </Stack>
+            </Stack>
           </div>
-          <Avatar sx={{cursor: "pointer"}} onClick={() => setCurrentScreen(<UpdateInternetAccount />)}>N</Avatar>
+          <Avatar
+            sx={{ cursor: "pointer" }}
+            onClick={() => setCurrentScreen(<UpdateInternetAccount />)}
+          >
+            N
+          </Avatar>
         </Toolbar>
       </AppBar>
       <Box

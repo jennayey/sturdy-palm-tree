@@ -11,8 +11,9 @@ import MyPolicyHome from "./MyPolicy/MyPolicyHome";
 import UserRegistration from "./MyPolicy/UserRegistration";
 import UserRegistration2 from "./MyPolicy/UserRegistration2";
 import PrivacyPolicy from "./PrivacyPolicy"
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
+
+const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 export default function App() {
   const themeSTATE = useSelector((state) => state.theme.value);
   console.log("APP.JS | Called USE SELECTOR");
@@ -112,6 +113,14 @@ export default function App() {
                     },
                   },
                 },
+                // MuiCollapse: {
+                //   styleOverrides: {
+                //     wrapper:{
+                //       backgroundColor: "#ebebf0"
+                      
+                //     }
+                //   }
+                // }
               }
             : {
                 MuiAppBar: {
@@ -128,8 +137,16 @@ export default function App() {
                     paper: {
                       backgroundImage: "none",
                     },
+
                   },
                 },
+                // MuiCollapse: {
+                //   styleOverrides: {
+                //     wrapper:{
+                //       backgroundColor: "#373a4a"
+                //     }
+                //   }
+                // },
               }),
         },
         typography: {

@@ -47,15 +47,17 @@ function Login() {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
+            <Typography id="transition-modal-title" variant="h6" component="h2" color="text.primary">
               Privacy Policy Statement
             </Typography>
+           
             <Typography
               id="transition-modal-description"
               align="center"
               sx={{ mt: 2 }}
+              color="text.secondary"
             >
-            <Divider sx={{mb: 3}}/>
+             <Divider sx={{mb: 3}}/>
               Your privacy is important to us. By using this site, you agree to
               the use of cookies and your personal information in accordance
               with our{" "}
